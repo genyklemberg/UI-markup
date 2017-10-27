@@ -1,0 +1,28 @@
+.tagsinput {
+  background-color: $shuttleGray-light;
+  border: 1px solid  $riverBed;
+  padding: 4px;
+  .tag {
+    margin-right: 2px;
+    font-size: $size-button;
+    &[data-role="remove"]{
+      margin-left: 8px;
+      cursor: pointer;
+    }
+    &:after {
+      content: "x";
+      padding: 0 2px;
+    }
+  }
+
+  input {
+    border: none;
+    box-shadow: none;
+    outline: none;
+    background-color: transparent;
+    padding: 0 6px;
+    margin: 0;
+    width: auto;
+    max-width: inherit;
+  }
+}

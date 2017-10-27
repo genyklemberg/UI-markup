@@ -1,0 +1,442 @@
+<html>
+<head>
+  <title>GCL</title>
+  <meta charset="UTF-8">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css"
+        crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.4.0/css/froala_editor.css"
+        crossorigin="anonymous">
+  <!--<link type="text/css" href="//www.tinymce.com/css/codepen.min.css" rel="stylesheet">-->
+  <link type="text/css" href="../../../dist/public/css/main.css" rel="stylesheet">
+
+</head>
+<body>
+<!--template start-->
+
+
+<nav class="navbar navbar-fixed-top navbar-dark bg-inverse container-fluid nopadding">
+  <div class="container-fluid top-line-images">
+    <div class="container">
+      <div class="col-md-12 text-xl-center">
+        <div class="logos-l">
+          <ul>
+            <li class="team-logo-name1"></li>
+            <li class="team-logo-name2"></li>
+            <li class="team-logo-name3"></li>
+            <li class="team-logo-name1"></li>
+            <li class="team-logo-name2"></li>
+            <li class="team-logo-name3"></li>
+          </ul>
+        </div>
+        <div class="logos-r">
+          <ul>
+            <li class="team-logo-name1"></li>
+            <li class="team-logo-name2"></li>
+            <li class="team-logo-name3"></li>
+            <li class="team-logo-name1"></li>
+            <li class="team-logo-name2"></li>
+            <li class="team-logo-name3"></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-5">
+        <div class="input-group">
+          <div class="input-group-btn">
+            <div class="dropdown-toggle-box separator">
+              <button class="btn btn-transparent dropdown-toggle base strong text-uppercase " type="button" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false">
+                Dota 2
+              </button>
+            </div>
+            <div class="dropdown d-inline-block align-middle">
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">CS:GO</a>
+                <a class="dropdown-item" href="#">Dota</a>
+              </div>
+            </div>
+          </div>
+          <button id="search-button" class="button button-search"></button>
+          <!--show on click "#search-button"-->
+          <form action="#" class="bd-search hidden-sm-down" style="display: none">
+            <input class="form-control" id="top-search" name="top-search" placeholder="Search for something..." type="text">
+          </form>
+        </div>
+      </div>
+      <div class="col-sm-2 text-xs-center nopadding">
+        <span class="navbar-brand" (click)="navigateToHome()">CYBER <span></span> GATES</span>
+        <div class="brand-bg"></div>
+      </div>
+      <div class="col-sm-5 text-xs-right">
+        <ul class="nav navbar-nav pull-right mr-2">
+          <!--<li class="nav-item">
+            <div class="btn-group">
+              <button class="btn btn-transparent" [class.btn-warning]="lS.localizationPreference === Localization.English" type="button"
+                (click)="setLanguage(Localization.English)">
+                EN
+                </button>
+                <button class="btn btn-transparent" [class.active]="lS.localizationPreference === Localization.Russian" type="button" (click)="setLanguage(Localization.Russian)">
+                RU
+              </button>
+                <button *ngIf="!authService.isAuth" class="btn btn-transparent" type="button" (click)="showRegistrationModal()">
+                registration
+              </button>
+                <button *ngIf="!authService.isAuth" class="btn btn-transparent" type="button" (click)="showLoginModal()">
+                login
+              </button>
+                <div class="btn-group" role="group" *ngIf="authService.isAuth">
+                  <div class="dropdown" [class.open]="userInformationService.dropDown">
+                    <button *ngIf="authService.isAuth" class="btn btn-secondary dropdown-toggle" (click)="toggleDropDown()">
+                    name
+                  </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <a class="dropdown-item btn" (click)="navigateToSettings()">settings </a>
+                      <a class="dropdown-item btn" (click)="navigateToProfile()"> Profile </a>
+                      <button class="dropdown-item btn" (click)="logOut()">exit</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </li>-->
+          <li class="nav-item">
+            <div class="separator separator-noright pull-left">
+              <button class="button button-dollar"></button>
+            </div>
+            <div class="separator separator-noright pull-left">
+              <button class="button button-bell" (click)="navigateToNotifications()"></button>
+            </div>
+            <div class="dropdown-toggle-box user separator">
+              <button class="btn btn-transparent dropdown-toggle base strong text-uppercase " type="button" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false">
+                Dota 2
+              </button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="wrapper container toggled">
+  <!--sidebar-->
+  <div class="sidebar-wrapper">
+    <ul class="sidebar-nav" style="margin-left:0;">
+      <!--here can be "Open/Close" button-->
+      <!--<li class="sidebar-brand">
+        <a href="#menu-toggle" id="menu-toggle"> Toggle </a>
+      </li>-->
+      <!--"Open/Close" button-->
+      <li>
+        <a (click)="navigateToProfile()"><i class="icon icon-profile " aria-hidden="true"> </i> <span style="margin-left:10px;">Section</span> </a>
+      </li>
+      <li>
+        <div class="label label-msg-count">22</div>
+        <a href="#"> <i class="icon icon-news" aria-hidden="true"></i><span style="margin-left:10px;"> Section</span></a>
+      </li>
+      <li>
+        <a href="#"> <i class="icon icon-messages" aria-hidden="true"> </i> <span style="margin-left:10px;"> Section</span> </a>
+      </li>
+      <li>
+        <a href="#"> <i class="icon icon-awards" aria-hidden="true"> </i> <span style="margin-left:10px;"> Section</span> </a>
+      </li>
+      <li>
+        <a href="#"><i class="icon icon-market" aria-hidden="true"> </i> <span style="margin-left:10px;">Section </span> </a>
+      </li>
+      <li>
+        <a href="#"> <i class="icon icon-stats" aria-hidden="true"> </i> <span style="margin-left:10px;"> Section</span> </a>
+      </li>
+      <li>
+        <a href="#"> <i class="icon icon-help" aria-hidden="true"> </i> <span style="margin-left:10px;"> Section</span> </a>
+      </li>
+      <li>
+        <a href="#"> <i class="icon icon-star" aria-hidden="true"> </i> <span style="margin-left:10px;"> Section</span> </a>
+      </li>
+    </ul>
+  </div>
+  <!--sidebar end-->
+
+  <div class="row row-offcanvas row-offcanvas-left">
+    <!--my-all-messages-header-->
+    <div class="my-all-messages-header">
+      <div class="col-sm-12">
+        <h1>Мои Сообщения</h1>
+      </div>
+    </div>
+    <!--my-all-messages-header END-->
+
+
+    <!--component pages-navigation-->
+    <div class="pages-navigation">
+      <div class="col-md-8">
+        <ul class="nav nav-tabs ml-3 mt-2">
+          <li class="nav-item">
+            <a class="nav-link active" (click)="navigateToHome()">СООБЩЕНИЯ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">УВЕДОМЛЕНИЯ</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-sm-4 mt-2">
+        <div class="input-group search-box">
+          <input class="form-control" type="text" placeholder="Поиск диалогов, сообщений">
+            <span class="input-group-btn">
+            <button class="btn btn-primary ml-1" type="button"></button>
+            </span>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <!--component pages-navigation END-->
+
+
+    <div class="container bg-gray pt-2">
+
+      <div class="col-md-12">
+
+        <!--my-all-messages-->
+        <div class="my-all-messages mb-1">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="table-box-content">
+                <table class="table table-main toggle-arrow-tiny">
+                  <thead>
+                  <tr>
+                    <th colspan="3">
+                      <div class="btn-group-cutom">
+                        <div class="col-sm-1 nopadding">
+                          <input id="check-toggle-0" type="checkbox">
+                          <label for="check-toggle-0" class="d-block"></label>
+                        </div>
+                        <div>
+                          <i class="fa fa-flag"></i>
+                        </div>
+                        <div>
+                          <i class="fa fa-trash-o"></i>
+                        </div>
+                      </div>
+                      <button class="btn btn-sm"><i class="fa fa-envelope" aria-hidden="true"></i>Написать сообщение</button>
+                    </th>
+                    <th class="" colspan="2">
+                      <div class="wrapper-dropdown pull-right">
+                        <p class="pull-left">Показывать</p>
+                        <div class="dropdown dropdown-big pull-left">
+                          <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Все сообщения
+                            <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu" aria-labelledby="dLabel">
+                            <li>item1</li>
+                            <li>item2</li>
+                            <li>item3</li>
+                          </ul>
+                        </div>
+                        <p class="pull-left">Сортировать</p>
+                        <div class="dropdown dropdown-big pull-left">
+                          <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            По дате
+                            <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu" aria-labelledby="dLabel">
+                            <li>item1</li>
+                            <li>item2</li>
+                            <li>item3</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>
+                      <div class="col-sm-1 nopadding">
+                        <input id="check-toggle-1" type="checkbox">
+                        <label for="check-toggle-1" class="d-block"></label>
+                      </div>
+                    </td>
+                    <td>
+                      <img alt="Scott Stevens" class="img-thumbnail img-circle" src="http://api.randomuser.me/portraits/men/19.jpg">
+                    </td>
+                    <td class="mw-180">
+                      <p class="blue base">Patrick Smith</p>
+                      <p class="gray-light">В 15:25</p>
+                      <!--<p><img alt="flag" class="img-thumbnail img-width-16" src="https://img.abiosgaming.com/flags/Malaysia.png"></p>-->
+                    </td>
+                    <td>
+                      <img alt="Scott Stevens" class="img-thumbnail img-circle img-sm" src="http://api.randomuser.me/portraits/men/19.jpg">
+                      <span>I have hinted that I would often jerk poor Queequeg from between the whale and the ship—where he would occasionally fall, from the incessant rolling an… </span>
+                    </td>
+                    <td>
+                      <span class="dropdown-menu-dots"></span>
+                      <div class="align-middle dropdown">
+                        <div aria-labelledby="dropdownMenuButton" class="dropdown-menu d-block">
+                          <a class="link dropdown-item caption" href="#">Написать сообщение</a>
+                          <a class="link dropdown-item caption" href="#">Добавить в друзья</a>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="col-sm-1 nopadding">
+                        <input id="check-toggle-2" type="checkbox">
+                        <label for="check-toggle-2" class="d-block"></label>
+                      </div>
+                    </td>
+                    <td>
+                      <img alt="Scott Stevens" class="img-thumbnail img-circle" src="http://api.randomuser.me/portraits/men/20.jpg">
+                    </td>
+                    <td class="mw-180">
+                      <p class="blue base">Patrick Smith</p>
+                      <p class="gray-light">Вчера</p>
+                      <!--<p><img alt="flag" class="img-thumbnail img-width-16" src="https://img.abiosgaming.com/flags/Malaysia.png"></p>-->
+                    </td>
+                    <td>I have hinted that I would often jerk poor Queequeg from between the whale and the ship—where he would occasionally fall, from the incessant rolling and swaying ...</td>
+                    <td>
+                      <span class="dropdown-menu-dots"></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="col-sm-1 nopadding">
+                        <input id="check-toggle-2" type="checkbox">
+                        <label for="check-toggle-2" class="d-block"></label>
+                      </div>
+                    </td>
+                    <td>
+                      <img alt="Scott Stevens" class="img-thumbnail img-circle" src="http://api.randomuser.me/portraits/men/20.jpg">
+                    </td>
+                    <td class="mw-180">
+                      <p class="blue base">Patrick Smith</p>
+                      <p class="gray-light">Вчера</p>
+                      <!--<p><img alt="flag" class="img-thumbnail img-width-16" src="https://img.abiosgaming.com/flags/Malaysia.png"></p>-->
+                    </td>
+                    <td>I have hinted that I would often jerk poor Queequeg from between the whale and the ship—where he would occasionally fall, from the incessant rolling and swaying ...</td>
+                    <td>
+                      <span class="dropdown-menu-dots"></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="col-sm-1 nopadding">
+                        <input id="check-toggle-2" type="checkbox">
+                        <label for="check-toggle-2" class="d-block"></label>
+                      </div>
+                    </td>
+                    <td>
+                      <img alt="Scott Stevens" class="img-thumbnail img-circle" src="http://api.randomuser.me/portraits/men/20.jpg">
+                    </td>
+                    <td class="mw-180">
+                      <p class="blue base">Patrick Smith</p>
+                      <p class="gray-light">Вчера</p>
+                      <!--<p><img alt="flag" class="img-thumbnail img-width-16" src="https://img.abiosgaming.com/flags/Malaysia.png"></p>-->
+                    </td>
+                    <td>I have hinted that I would often jerk poor Queequeg from between the whale and the ship—where he would occasionally fall, from the incessant rolling and swaying ...</td>
+                    <td>
+                      <span class="dropdown-menu-dots"></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="col-sm-1 nopadding">
+                        <input id="check-toggle-2" type="checkbox">
+                        <label for="check-toggle-2" class="d-block"></label>
+                      </div>
+                    </td>
+                    <td>
+                      <img alt="Scott Stevens" class="img-thumbnail img-circle" src="http://api.randomuser.me/portraits/men/20.jpg">
+                    </td>
+                    <td class="mw-180">
+                      <p class="blue base">Patrick Smith</p>
+                      <p class="gray-light">Вчера</p>
+                      <!--<p><img alt="flag" class="img-thumbnail img-width-16" src="https://img.abiosgaming.com/flags/Malaysia.png"></p>-->
+                    </td>
+                    <td>I have hinted that I would often jerk poor Queequeg from between the whale and the ship—where he would occasionally fall, from the incessant rolling and swaying ...</td>
+                    <td>
+                      <span class="dropdown-menu-dots"></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="col-sm-1 nopadding">
+                        <input id="check-toggle-2" type="checkbox">
+                        <label for="check-toggle-2" class="d-block"></label>
+                      </div>
+                    </td>
+                    <td>
+                      <img alt="Scott Stevens" class="img-thumbnail img-circle" src="http://api.randomuser.me/portraits/men/20.jpg">
+                    </td>
+                    <td class="mw-180">
+                      <p class="blue base">Patrick Smith</p>
+                      <p class="gray-light">Вчера</p>
+                      <!--<p><img alt="flag" class="img-thumbnail img-width-16" src="https://img.abiosgaming.com/flags/Malaysia.png"></p>-->
+                    </td>
+                    <td>I have hinted that I would often jerk poor Queequeg from between the whale and the ship—where he would occasionally fall, from the incessant rolling and swaying ...</td>
+                    <td>
+                      <span class="dropdown-menu-dots"></span>
+                    </td>
+                  </tr>
+                  </tbody>
+                  <!--<tfoot>
+                    <tr>
+                      <td colspan="5" class="table-visible">
+                        <ul class="pagination pull-right">
+                          <li class="table-page-arrow disabled"><a data-page="first" href="#first">«</a></li>
+                          <li class="table-page-arrow disabled"><a data-page="prev" href="#prev">‹</a></li>
+                          <li class="table-page active"><a data-page="0" href="#">1</a></li>
+                          <li class="table-page"><a data-page="1" href="#">2</a></li>
+                          <li class="table-page-arrow"><a data-page="next" href="#next">›</a></li>
+                          <li class="table-page-arrow"><a data-page="last" href="#last">»</a></li>
+                        </ul>
+                      </td>
+                    </tr>
+                  </tfoot>-->
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--my-all-messages END-->
+
+      </div>
+
+        <pages></pages>
+
+
+  </div>
+</div>
+<!--/row-->
+
+</div>
+<!-- /container -->
+
+
+<footer class="footer">
+  <div class="container-fluid">
+    <span class="text-muted">Все права защищены</span>
+  </div>
+</footer>
+<!--<background-panel></background-panel>-->
+
+<modal-adapter></modal-adapter>
+
+
+<!--template start END-->
+<script
+        src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+
+<!--<script type="text/javascript" src="./static/js/moment-with-locales.js"></script>
+<script type="text/javascript" src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+<script type="text/javascript" src="./static/js/polyfills.js"></script>
+<script type="text/javascript" src="./static/js/application.js"></script>-->
+</body>
+</html>

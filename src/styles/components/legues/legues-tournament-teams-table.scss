@@ -1,0 +1,116 @@
+.leagues-tournament-teams-table {
+  padding: 1rem 1rem 3rem;
+  margin-bottom: 1rem;
+  background-color: $shark;
+
+  table {
+    &.table-striped {
+      tbody tr:nth-of-type(odd) {
+        background-color: $mako;
+      }
+      .team-logo {
+        width: 40px;
+        height: 30px;
+        background-color: #667380;
+      }
+      .arrow-down {
+        display: inline-block;
+        border: 0;
+        height: 8px;
+        width: 14px;
+        background-image: url($assetPath + "img/icons/chevron-down-copy.svg");
+      }
+      .flag {
+        width: 16px;
+        height: 11px;
+        background-image: url($assetPath + "img/flags/16/Afghanistan.png");
+      }
+    }
+    thead th {
+      border: 0;
+      font-size: $size-table;
+      font-family: $font-bold;
+      padding-top: 0;
+      padding-bottom: 0.5rem;
+      text-align: center;
+      &:first-child {
+        font-size: $size-body;
+        text-align: left;
+      }
+    }
+    tbody {
+      tr {
+        background-color: $shuttleGray-dark;
+        td,
+        th {
+          color: $white;
+          font-family: $font-h4;
+          font-size: $size-base;
+          line-height: $line-height-h4;
+          //border-left: 1px solid $shuttleGray-light;
+          border-top: 0;
+          text-align: center;
+          &:nth-child(3),
+          &:nth-child(4){
+            padding-top: 0.375rem ;
+            padding-bottom: 0 ;
+          }
+          &:nth-child(4){
+            color: $cornflower;
+            text-align: left;
+            font-size: $size-table;
+            font-family: $font-body;
+          }
+          &:last-child {
+            max-width: 120px;
+          }
+          span.green,
+          span.red {
+            font-size: 26px;
+            line-height: 14px;
+          }
+          div span {
+            display: inline-block;
+            float: left;
+            //text-align: center;
+            margin-right: $base-margin / 2;
+            &.win,
+            &.loose {
+              width: 20px;
+              height: 20px;
+              line-height: 20px;
+            }
+            &.win {
+              background-color: $atlantis;
+            }
+            &.loose {
+              background-color: $flushMahogany;
+            }
+
+            $opacity-gap : 0.2;
+            @for $span from 0 through 4 {
+              &:nth-child(#{$span + 1}) {
+                $gap: if($span == 0, 2*$opacity-gap, 2*($span * $opacity-gap + $opacity-gap) );
+                opacity: $gap/2 ;
+              }
+            }
+
+
+          }
+        }
+        th {
+          &:first-child {
+            font-size: $size-body;
+            border-left: 0;
+          }
+          &.line-green {
+            -webkit-box-shadow:inset 3px 0px $atlantis;
+            -moz-box-shadow:inset 3px 0px $atlantis;
+            box-shadow:inset 3px 0px $atlantis;
+          }
+        }
+      }
+    }
+  }
+
+  }

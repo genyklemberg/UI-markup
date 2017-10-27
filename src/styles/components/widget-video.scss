@@ -1,0 +1,42 @@
+.widget-video {
+  .widget-content {
+    //padding: 15px 10px;
+  }
+  .img-thumbnail {
+    padding: 0;
+    border: 0;
+    width: 80px;
+    height: 56px;
+    margin: 0 auto;
+  }
+  .carousel {
+    padding: 0;
+    margin: 0 22px;
+    .item {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      width: 50%;
+      float: left;
+      text-align: center;
+      &.active {
+        background-color: $shuttleGray-dark;
+      }
+      &:not(:last-child) {
+        //border-bottom: 1px solid $shuttleGray-dark;
+      }
+      p {
+        margin-bottom: 0;
+        color: $iron;
+      }
+
+    }
+    .carousel-control {
+      left: -32px;
+      font-size: 4rem;
+      &.right {
+        right: -32px;
+        left: initial;
+      }
+    }
+  }
+}

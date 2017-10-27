@@ -1,0 +1,48 @@
+.dropdown {
+  button {
+    background-color: $cornflower;
+    color: $mako;
+    border: solid 2px $cornflower;
+    height: 22px;
+    font-family: $font-info;
+    font-size: $size-info;
+    border-radius: 2px;
+    padding: 0px 8px;
+    cursor: pointer;
+
+    .caret {
+      background-image: url($assetPath + "img/icons/chevron-down-dark.svg");
+      width: 14px;
+      height: 8px;
+      display: inline-block;
+      margin-left: 4px;
+    }
+    .icon-calendar {
+      margin-right: 4px;
+    }
+  }
+  .dropdown-menu {
+    li {
+
+    }
+  }
+
+  &.dropdown-big {
+    button {
+      padding: 3px 8px;
+      height: auto;
+    }
+  }
+
+  &.dropdown-full-width {
+    button {
+      width: 100%;
+      text-align: left;
+      .caret {
+        float: right;
+        margin-top: 6px;
+        margin-left: 6px;
+      }
+    }
+  }
+}

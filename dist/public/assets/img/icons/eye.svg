@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="10px" viewBox="0 0 16 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <title>474EE246-6502-4A81-99D5-8AA4E8A55EB9</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="620" height="30"></rect>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.32   0 0 0 0 0.36   0 0 0 0 0.4  0 0 0 1 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+        <path d="M8,10.0002966 C12.001076,10.0484778 16,5.00029656 16,5.00029656 C16,5.00029656 12.0528271,0.0450915466 8,0.000296559841 C3.94717289,-0.0444984269 0,5.00029656 0,5.00029656 C0,5.00029656 3.99892403,9.9521153 8,10.0002966 Z" id="path-3"></path>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="16" height="10.0006393" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+        <circle id="path-5" cx="8" cy="5" r="3"></circle>
+        <mask id="mask-6" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="6" height="6" fill="white">
+            <use xlink:href="#path-5"></use>
+        </mask>
+    </defs>
+    <g id="UI-Kit" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="UI-Elements" transform="translate(-106.000000, -1513.000000)">
+            <g id="Lower-Line-Copy" transform="translate(30.000000, 1503.000000)">
+                <g id="Rectangle-3-Copy-16">
+                    <use fill="#292E33" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                </g>
+                <g id="Group-3" transform="translate(76.000000, 10.000000)">
+                    <use id="Oval" stroke="#98D9EF" mask="url(#mask-4)" stroke-width="2" xlink:href="#path-3"></use>
+                    <use id="Oval-2" stroke="#98D9EF" mask="url(#mask-6)" stroke-width="2" xlink:href="#path-5"></use>
+                    <circle id="Oval-2" fill="#98D9EF" cx="8" cy="5" r="1"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

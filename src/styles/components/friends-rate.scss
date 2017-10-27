@@ -1,0 +1,17 @@
+/*
+table styles is in : table-common.scss
+*/
+.friends-rate {
+  table {
+    .dropdown-menu-dots {
+      //margin-top: -20px;
+    }
+    .table-row-detail-cell {
+      .table-row-detail-inner {
+        .table-row-detail-row {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}

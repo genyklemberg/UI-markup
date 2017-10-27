@@ -1,0 +1,469 @@
+<html>
+<head>
+  <title>GCL</title>
+  <meta charset="UTF-8">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css"
+        crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.4.0/css/froala_editor.css"
+        crossorigin="anonymous">
+  <!--<link type="text/css" href="//www.tinymce.com/css/codepen.min.css" rel="stylesheet">-->
+  <link type="text/css" href="../../../dist/public/css/main.css" rel="stylesheet">
+
+</head>
+<body>
+<!--template start-->
+
+
+<nav class="navbar navbar-fixed-top navbar-dark bg-inverse container-fluid nopadding">
+  <div class="container-fluid top-line-images">
+    <div class="container">
+      <div class="col-md-12 text-xl-center">
+        <div class="logos-l">
+          <ul>
+            <li class="team-logo-name1"></li>
+            <li class="team-logo-name2"></li>
+            <li class="team-logo-name3"></li>
+            <li class="team-logo-name1"></li>
+            <li class="team-logo-name2"></li>
+            <li class="team-logo-name3"></li>
+          </ul>
+        </div>
+        <div class="logos-r">
+          <ul>
+            <li class="team-logo-name1"></li>
+            <li class="team-logo-name2"></li>
+            <li class="team-logo-name3"></li>
+            <li class="team-logo-name1"></li>
+            <li class="team-logo-name2"></li>
+            <li class="team-logo-name3"></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-5">
+        <div class="input-group">
+          <div class="input-group-btn">
+            <div class="dropdown-toggle-box separator">
+              <button class="btn btn-transparent dropdown-toggle base strong text-uppercase " type="button" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false">
+                Dota 2
+              </button>
+            </div>
+            <div class="dropdown d-inline-block align-middle">
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">CS:GO</a>
+                <a class="dropdown-item" href="#">Dota</a>
+              </div>
+            </div>
+          </div>
+          <button id="search-button" class="button button-search"></button>
+          <!--show on click "#search-button"-->
+          <form action="#" class="bd-search hidden-sm-down" style="display: none">
+            <input class="form-control" id="top-search" name="top-search" placeholder="Search for something..." type="text">
+          </form>
+        </div>
+      </div>
+      <div class="col-sm-2 text-xs-center nopadding">
+        <span class="navbar-brand" (click)="navigateToHome()">CYBER <span></span> GATES</span>
+        <div class="brand-bg"></div>
+      </div>
+      <div class="col-sm-5 text-xs-right">
+        <ul class="nav navbar-nav pull-right mr-2">
+          <!--<li class="nav-item">
+            <div class="btn-group">
+              <button class="btn btn-transparent" [class.btn-warning]="lS.localizationPreference === Localization.English" type="button"
+                (click)="setLanguage(Localization.English)">
+                EN
+                </button>
+                <button class="btn btn-transparent" [class.active]="lS.localizationPreference === Localization.Russian" type="button" (click)="setLanguage(Localization.Russian)">
+                RU
+              </button>
+                <button *ngIf="!authService.isAuth" class="btn btn-transparent" type="button" (click)="showRegistrationModal()">
+                registration
+              </button>
+                <button *ngIf="!authService.isAuth" class="btn btn-transparent" type="button" (click)="showLoginModal()">
+                login
+              </button>
+                <div class="btn-group" role="group" *ngIf="authService.isAuth">
+                  <div class="dropdown" [class.open]="userInformationService.dropDown">
+                    <button *ngIf="authService.isAuth" class="btn btn-secondary dropdown-toggle" (click)="toggleDropDown()">
+                    name
+                  </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <a class="dropdown-item btn" (click)="navigateToSettings()">settings </a>
+                      <a class="dropdown-item btn" (click)="navigateToProfile()"> Profile </a>
+                      <button class="dropdown-item btn" (click)="logOut()">exit</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </li>-->
+          <li class="nav-item">
+            <div class="separator separator-noright pull-left">
+              <button class="button button-dollar"></button>
+            </div>
+            <div class="separator separator-noright pull-left">
+              <button class="button button-bell" (click)="navigateToNotifications()"></button>
+            </div>
+            <div class="dropdown-toggle-box user separator">
+              <button class="btn btn-transparent dropdown-toggle base strong text-uppercase " type="button" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false">
+                Dota 2
+              </button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="wrapper container toggled">
+  <!--sidebar-->
+  <div class="sidebar-wrapper">
+    <ul class="sidebar-nav" style="margin-left:0;">
+      <!--here can be "Open/Close" button-->
+      <!--<li class="sidebar-brand">
+        <a href="#menu-toggle" id="menu-toggle"> Toggle </a>
+      </li>-->
+      <!--"Open/Close" button-->
+      <li>
+        <a (click)="navigateToProfile()"><i class="icon icon-profile " aria-hidden="true"> </i> <span style="margin-left:10px;">Section</span> </a>
+      </li>
+      <li>
+        <div class="label label-msg-count">22</div>
+        <a href="#"> <i class="icon icon-news" aria-hidden="true"></i><span style="margin-left:10px;"> Section</span></a>
+      </li>
+      <li>
+        <a href="#"> <i class="icon icon-messages" aria-hidden="true"> </i> <span style="margin-left:10px;"> Section</span> </a>
+      </li>
+      <li>
+        <a href="#"> <i class="icon icon-awards" aria-hidden="true"> </i> <span style="margin-left:10px;"> Section</span> </a>
+      </li>
+      <li>
+        <a href="#"><i class="icon icon-market" aria-hidden="true"> </i> <span style="margin-left:10px;">Section </span> </a>
+      </li>
+      <li>
+        <a href="#"> <i class="icon icon-stats" aria-hidden="true"> </i> <span style="margin-left:10px;"> Section</span> </a>
+      </li>
+      <li>
+        <a href="#"> <i class="icon icon-help" aria-hidden="true"> </i> <span style="margin-left:10px;"> Section</span> </a>
+      </li>
+      <li>
+        <a href="#"> <i class="icon icon-star" aria-hidden="true"> </i> <span style="margin-left:10px;"> Section</span> </a>
+      </li>
+    </ul>
+  </div>
+  <!--sidebar end-->
+
+  <div class="row row-offcanvas row-offcanvas-left">
+    <div class="col-md-12">
+
+      <!--component user-profile (styles user-profile.scss)-->
+      <!-- TODO: This info needs component -->
+      <div class="user-profile row">
+        <div class="col-md-5 profile-box">
+          <div class="panel-heading resume-heading">
+            <div class="row">
+              <div class="col-lg-12">
+                <!--<h1>{{ userInformationService.userInformation?.name }}</h1>-->
+                <h1> User name </h1>
+                <div class="col-xs-12 col-sm-4">
+                  <figure>
+                    <!--<img class="img-responsive" alt="" [src]="userInformationService.showUserProfileAvatar()">-->
+                    <img alt="" class="img-responsive" ng-reflect-src="http://placehold.it/120x120" src="http://placehold.it/120x120">
+                  </figure>
+                  <div class="progress-box">
+                    <p>До следующего уровня:</p>
+                    <div class="progress">
+
+                      <p></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-8">
+                  <table class="table table-user-information">
+                    <thead>
+                    <tr>
+                      <td>Уровень:</td>
+                      <td>5</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <td>Лига:</td>
+                      <td>2018</td>
+                    </tr>
+                    <tr>
+                      <td>Рейтинг:</td>
+                      <td>01/24/1988</td>
+                    </tr>
+                    <tr>
+                      <td>Репутация:</td>
+                      <td>Female</td>
+                    </tr>
+                    <tr>
+                      <td>Команда:</td>
+                      <td>Kathmandu,Nepal</td>
+                    </tr>
+
+                    </tbody>
+                  </table>
+                  <div class="social-btns">
+
+                    <div class="social-btn-holder">
+                      <a href="#" class="btn btn-social btn-facebook">
+                        <i class="fa fa-facebook">fb</i> </a>
+                    </div>
+
+                    <div class="social-btn-holder">
+                      <a href="#" class="btn btn-social btn-twitter">
+                        <i class="fa fa-twitter">tw</i> </a>
+                    </div>
+
+                    <div class="social-btn-holder">
+                      <a href="#" class="btn btn-social btn-linkedin">
+                        <i class="fa fa-youtube">ll</i> </a>
+                    </div>
+
+                    <div class="social-btn-holder">
+                      <a href="#" class="btn btn-social btn-google">
+                        <i class="fa fa-google">go</i></a>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="col-xs-12">
+                  <div class="tags">
+                    <span class="label label-info">Carry</span>
+                    <span class="label label-info">Solo Mid</span>
+                    <span class="label label-info">Scout</span>
+                    <span class="label label-info">Ukraine</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-7 profile-banner">
+          <p class="profile-info">Друзья, мы уехали на TI7! Пожелайте удачи :) Трансляция наших матчей на <a href="#">Твитче</a></p>
+          <p class="profile-sign">DreamTeam - Dream Big!!!</p>
+          <button class="btn btn-blue" type="button"></button>
+        </div>
+        <div class="col-md-12 navbar-main-wrapper">
+          <ul class="navbar-nav navbar-main-user navbar-center">
+            <li class="nav-item active">
+              <a class="nav-link" (click)="navigateToProfile()">
+                МОЙ ПРОФИЛЬ <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">МОИ ДРУЗЬЯ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#">МОЯ КОМАНДА</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#">МОИ ДОСТИЖЕНИЯ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#">СПОНСОРЫ</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!--component user-profile END-->
+
+    </div>
+    <div class="clearfix visible-xs-block"></div>
+
+
+    <!--component pages-navigation-->
+    <!--<div class="col-md-12 pages-navigation">
+      <ul class="nav nav-tabs justify-content-center mt-2">
+        <li class="nav-item active">
+          <a class="nav-link" (click)="navigateToHome()">ЛЕНТА</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">ОБ игроке</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">СТАТИСТИКА</a>
+        </li>
+      </ul>
+    </div>
+    <div class="clearfix"></div>-->
+    <!--component pages-navigation END-->
+
+    <div class="container bg-gray pt-2">
+
+      <div class="col-md-12">
+
+        <!--my-sponsors-->
+        <div class="my-sponsors">
+          <div class="row">
+            <div class="col-md-5 pr-0">
+              <div class="table-box-content">
+                <table class="table table-main toggle-arrow-tiny">
+                  <thead>
+                  <tr>
+                    <th class="table-hidden" colspan="2">Мои Спонсоры</th>
+                    <th class="text-right"><button class="btn"><i class="fa fa-plus-square"></i></button></th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>
+                      <span class="table-toggle active"></span>
+                      <img alt="Scott Stevens" class="img-thumbnail img-circle" src="http://api.randomuser.me/portraits/men/19.jpg">
+                    </td>
+                    <td>
+                      <p class="blue base">Patrick Smith</p>
+                      <p class="gray-light">Рейтинг: <span class="ml-1">125</span></p>
+                    </td>
+                    <td>
+                      <span class="dropdown-menu-dots"></span>
+                     <!--
+                       <div class="align-middle dropdown">
+                          <div aria-labelledby="dropdownMenuButton" class="dropdown-menu d-block">
+                            <a class="link dropdown-item caption" href="#">Написать сообщение</a>
+                            <a class="link dropdown-item caption" href="#">Добавить в друзья</a>
+                          </div>
+                        </div>
+                      -->
+                    </td>
+                  </tr>
+                  <tr class="table-row-detail">
+                    <td></td>
+                    <td class="table-row-detail-cell">
+                      <div class="table-row-detail-inner">
+                        <div class="table-row-detail-row mb-1">
+                          <span class="table-row-detail-name">Спонсирует:</span>
+                        </div>
+                        <div class="table-row-detail-row">
+                          <img alt="flag" class="img-thumbnail img-width-32" src="https://img.abiosgaming.com/flags/Malaysia.png">
+                          <span class="table-row-detail-value blue">Infamous</span>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="table-toggle"></span>
+                      <img alt="Scott Stevens" class="img-thumbnail img-circle" src="http://api.randomuser.me/portraits/men/20.jpg">
+                    </td>
+                    <td>
+                      <p class="blue base">Patrick Smith</p>
+                      <p class="gray-light">Рейтинг: <span class="ml-1">125</span></p>
+                    </td>
+                    <td>
+                      <span class="dropdown-menu-dots"></span>
+                    </td>
+                  </tr>
+                  <tr class="table-row-detail" style="display: none">
+                    <td></td>
+                    <td>...Details here</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="table-toggle"></span>
+                      <img alt="Scott Stevens" class="img-thumbnail img-circle" src="http://api.randomuser.me/portraits/men/20.jpg">
+                    </td>
+                    <td>
+                      <p class="blue base">Patrick Smith</p>
+                      <p class="gray-light">Рейтинг: <span class="ml-1">125</span></p>
+                    </td>
+                    <td>
+                      <span class="dropdown-menu-dots"></span>
+                    </td>
+                  </tr>
+                  <tr class="table-row-detail" style="display: none">
+                    <td></td>
+                    <td>...Details here</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="table-toggle"></span>
+                      <img alt="Scott Stevens" class="img-thumbnail img-circle" src="http://api.randomuser.me/portraits/men/20.jpg">
+                    </td>
+                    <td>
+                      <p class="blue base">Patrick Smith</p>
+                      <p class="gray-light">Рейтинг: <span class="ml-1">125</span></p>
+                    </td>
+                    <td>
+                      <span class="dropdown-menu-dots"></span>
+                    </td>
+                  </tr>
+                  <tr class="table-row-detail" style="display: none">
+                    <td></td>
+                    <td>...Details here</td>
+                  </tr>
+                  </tbody>
+                  <!--<tfoot>
+                    <tr>
+                      <td colspan="5" class="table-visible">
+                        <ul class="pagination pull-right">
+                          <li class="table-page-arrow disabled"><a data-page="first" href="#first">«</a></li>
+                          <li class="table-page-arrow disabled"><a data-page="prev" href="#prev">‹</a></li>
+                          <li class="table-page active"><a data-page="0" href="#">1</a></li>
+                          <li class="table-page"><a data-page="1" href="#">2</a></li>
+                          <li class="table-page-arrow"><a data-page="next" href="#next">›</a></li>
+                          <li class="table-page-arrow"><a data-page="last" href="#last">»</a></li>
+                        </ul>
+                      </td>
+                    </tr>
+                  </tfoot>-->
+                </table>
+              </div>
+            </div>
+            <div class="col-md-7">
+              <div class="become-sponsor">
+                <p>Стань спонсором!</p>
+                <p>Описание возможности стать спонсором.</p>
+                <button class="btn btn-primary">СТАТЬ СПОНСОРОМ</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--template-my-sponsors END-->
+
+      </div>
+
+        <pages></pages>
+
+
+  </div>
+</div>
+<!--/row-->
+
+</div>
+<!-- /container -->
+
+
+<footer class="footer">
+  <div class="container-fluid">
+    <span class="text-muted">Все права защищены</span>
+  </div>
+</footer>
+<!--<background-panel></background-panel>-->
+
+<modal-adapter></modal-adapter>
+
+
+<!--template start END-->
+<script
+        src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+
+<!--<script type="text/javascript" src="./static/js/moment-with-locales.js"></script>
+<script type="text/javascript" src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+<script type="text/javascript" src="./static/js/polyfills.js"></script>
+<script type="text/javascript" src="./static/js/application.js"></script>-->
+</body>
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <title>03DAB920-CE03-490C-9F82-B920AECEB5F9</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <polygon id="path-1" points="1.1528218 15 -4.66442026e-13 11.662186 2.52412353 9.14256929 2.97093396 5.64765297 6.36642561 4.44527457 8.32437198 1.48546698 11.918713 1.83847266 15 0 18.081287 1.83847266 21.675628 1.48546698 23.6335744 4.44527457 27.029066 5.64765297 27.4758765 9.14256929 30 11.662186 28.8471782 15 30 18.337814 27.4758765 20.8574307 27.029066 24.352347 23.6335744 25.5547254 21.675628 28.514533 18.081287 28.1615273 15 30 11.918713 28.1615273 8.32437198 28.514533 6.36642561 25.5547254 2.97093396 24.352347 2.52412353 20.8574307 -4.66442026e-13 18.337814"></polygon>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.831372549   0 0 0 0 0.835294118   0 0 0 0 0.835294118  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="UI-Kit" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="UI-Elements" transform="translate(-725.000000, -1271.000000)">
+            <g id="Group-10" transform="translate(730.000000, 1276.000000)">
+                <g id="Star-Copy">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#D4D5D5" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+                <text id="2" font-family="Ubuntu-Bold, Ubuntu" font-size="16" font-weight="bold" line-spacing="20" fill="#3D454C">
+                    <tspan x="10" y="24">2</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

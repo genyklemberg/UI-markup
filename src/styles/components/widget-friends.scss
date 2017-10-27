@@ -1,0 +1,42 @@
+.widget-friends {
+  .input-group {
+     .form-control {
+       height: 30px;
+     }
+    .input-group-btn button{
+      border-radius: .25rem;
+      background: $cornflower url($assetPath + "img/icons/search-dark.svg") 2px -2px;
+      height: 30px;
+      width: 30px;
+    }
+  }
+  h3 {
+    margin: 15px 0;
+  }
+
+  .img-thumbnail {
+    padding: 0;
+    border-color: #667380;
+    width: 30px;
+  }
+  .btn-primary {
+    font-size: 16px;
+    width: 28.43%;
+    margin-right: 6%;
+    &:last-child { margin-right: 0; }
+  }
+  .list-group-item {
+    &:hover {
+      background-color: $shuttleGray-dark;
+    }
+    .puny {
+      color: $iron;
+    }
+    .name-small {
+      color: $cornflower;
+    }
+  }
+  .media-heading {
+    margin-bottom: -5px;
+  }
+}

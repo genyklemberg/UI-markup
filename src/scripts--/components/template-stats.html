@@ -1,0 +1,745 @@
+<nav class="navbar navbar-fixed-top navbar-dark bg-inverse container-fluid nopadding">
+  <div class="container-fluid top-line-images">
+    <div class="container">
+      <div class="col-md-12 text-xl-center">
+        <div class="logos-l"></div>
+        <div class="logos-r"></div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-5">
+        <div class="input-group">
+          <div class="input-group-btn">
+            <!--<button class="navbar-toggler d-inline-block align-middle" type="button" data-toggle="offcanvas"></button>-->
+            <div class="dropdown-toggle-box separator">
+              <button class="btn btn-transparent dropdown-toggle base strong text-uppercase " type="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                Dota 2
+                </button>
+            </div>
+            <div class="dropdown d-inline-block align-middle">
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">CS:GO</a>
+                <a class="dropdown-item" href="#">Dota</a>
+              </div>
+            </div>
+          </div>
+          <button id="search-button" class="button button-search"></button>
+          <!--show on click "#search-button"-->
+          <form action="#" class="bd-search hidden-sm-down" style="display: none">
+            <input class="form-control" id="top-search" name="top-search" placeholder="Search for something..." type="text">
+          </form>
+        </div>
+      </div>
+      <div class="col-sm-2 text-xs-center nopadding">
+        <a class="navbar-brand" (click)="navigateToHome()">CYBER <span></span> GATES</a>
+        <div class="brand-bg"></div>
+      </div>
+      <div class="col-sm-5 text-xs-right">
+        <ul class="nav navbar-nav">
+          <li class="nav-item">
+            <div class="btn-group">
+              <button class="btn btn-transparent" [class.btn-warning]="lS.localizationPreference === Localization.English" type="button"
+                (click)="setLanguage(Localization.English)">
+                EN
+                </button>
+                <button class="btn btn-transparent" [class.active]="lS.localizationPreference === Localization.Russian" type="button" (click)="setLanguage(Localization.Russian)">
+                RU
+              </button>
+                <button *ngIf="!authService.isAuth" class="btn btn-transparent" type="button" (click)="showRegistrationModal()">
+                {{ lS.userLocalization?.header.registration }}
+              </button>
+                <button *ngIf="!authService.isAuth" class="btn btn-transparent" type="button" (click)="showLoginModal()">
+                {{ lS.translateByKey("header.login") }}
+              </button>
+                <div class="btn-group" role="group" *ngIf="authService.isAuth">
+                  <div class="dropdown" [class.open]="userInformationService.dropDown">
+                    <button *ngIf="authService.isAuth" class="btn btn-secondary dropdown-toggle" (click)="toggleDropDown()">
+                    {{ userInformationService.userInformation?.name }}
+                  </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <a class="dropdown-item btn" (click)="navigateToSettings()">{{ lS.userLocalization?.header.settings }}</a>
+                      <a class="dropdown-item btn" (click)="navigateToProfile()"> Profile </a>
+                      <button class="dropdown-item btn" (click)="logOut()">{{ lS.userLocalization?.header.exit }}</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <div class="separator separator-noright pull-left">
+              <button class="button button-dollar"></button>
+            </div>
+            <div class="separator separator-noright pull-left">
+              <button class="button button-bell" (click)="navigateToNotifications()"></button>
+            </div>
+            <div class="dropdown-toggle-box user separator">
+              <button class="btn btn-transparent dropdown-toggle base strong text-uppercase " type="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                Dota 2
+                </button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="wrapper container toggled">
+  <!--sidebar-->
+  <div class="sidebar-wrapper">
+    <ul class="sidebar-nav" style="margin-left:0;">
+      <!--here can be "Open/Close" button-->
+      <li class="sidebar-brand">
+        <a href="#menu-toggle" id="menu-toggle"> Toggle </a>
+      </li>
+      <!--"Open/Close" button-->
+      <li>
+        <a (click)="navigateToProfile()"><i class="icon icon-profile " aria-hidden="true"> </i> <span style="margin-left:10px;">Section</span> </a>
+      </li>
+      <li>
+        <div class="label label-msg-count">22</div>
+        <a href="#"> <i class="icon icon-news" aria-hidden="true"></i><span style="margin-left:10px;"> Section</span></a>
+      </li>
+      <li>
+        <a href="#"> <i class="icon icon-messages" aria-hidden="true"> </i> <span style="margin-left:10px;"> Section</span> </a>
+      </li>
+      <li>
+        <a href="#"> <i class="icon icon-awards" aria-hidden="true"> </i> <span style="margin-left:10px;"> Section</span> </a>
+      </li>
+      <li>
+        <a href="#"><i class="icon icon-market" aria-hidden="true"> </i> <span style="margin-left:10px;">Section </span> </a>
+      </li>
+      <li>
+        <a href="#"> <i class="icon icon-stats" aria-hidden="true"> </i> <span style="margin-left:10px;"> Section</span> </a>
+      </li>
+      <li>
+        <a href="#"> <i class="icon icon-help" aria-hidden="true"> </i> <span style="margin-left:10px;"> Section</span> </a>
+      </li>
+      <li>
+        <a href="#"> <i class="icon icon-star" aria-hidden="true"> </i> <span style="margin-left:10px;"> Section</span> </a>
+      </li>
+    </ul>
+  </div>
+  <!--sidebar end-->
+
+  <div class="row row-offcanvas row-offcanvas-left">
+    <div class="col-md-12">
+
+      <!--component user-profile (styles user-profile.scss)-->
+      <!-- TODO: This info needs component -->
+      <div class="user-profile row">
+        <div class="col-md-5 profile-box">
+          <div class="panel-heading resume-heading">
+            <div class="row">
+              <div class="col-lg-12">
+                <h1>{{ userInformationService.userInformation?.name }}</h1>
+                <div class="col-xs-12 col-sm-4">
+                  <figure>
+                    <img class="img-responsive" alt="" [src]="userInformationService.showUserProfileAvatar()">
+                  </figure>
+                  <div class="progress-box">
+                    <p>До следующего уровня:</p>
+                    <div class="progress">
+
+                      <p></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-8">
+                  <table class="table table-user-information">
+                    <thead>
+                      <tr>
+                        <td>Уровень:</td>
+                        <td>5</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Лига:</td>
+                        <td>2018</td>
+                      </tr>
+                      <tr>
+                        <td>Рейтинг:</td>
+                        <td>01/24/1988</td>
+                      </tr>
+                      <tr>
+                        <td>Репутация:</td>
+                        <td>Female</td>
+                      </tr>
+                      <tr>
+                        <td>Команда:</td>
+                        <td>Kathmandu,Nepal</td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                  <div class="social-btns">
+
+                    <div class="social-btn-holder">
+                      <a href="#" class="btn btn-social btn-facebook">
+                        <i class="fa fa-facebook">fb</i> </a>
+                    </div>
+
+                    <div class="social-btn-holder">
+                      <a href="#" class="btn btn-social btn-twitter">
+                        <i class="fa fa-twitter">tw</i> </a>
+                    </div>
+
+                    <div class="social-btn-holder">
+                      <a href="#" class="btn btn-social btn-linkedin">
+                        <i class="fa fa-youtube">ll</i> </a>
+                    </div>
+
+                    <div class="social-btn-holder">
+                      <a href="#" class="btn btn-social btn-google">
+                        <i class="fa fa-google">go</i></a>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="col-xs-12">
+                  <div class="tags">
+                    <span class="label label-info">Carry</span>
+                    <span class="label label-info">Solo Mid</span>
+                    <span class="label label-info">Scout</span>
+                    <span class="label label-info">Ukraine</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-7 profile-banner">
+          <p class="profile-info">Друзья, мы уехали на TI7! Пожелайте удачи :) Трансляция наших матчей на <a href="#">Твитче</a></p>
+          <p class="profile-sign">DreamTeam - Dream Big!!!</p>
+          <button class="btn btn-blue" type="button"></button>
+        </div>
+        <div class="col-md-12 navbar-main-wrapper">
+          <ul class="navbar-nav navbar-main-user navbar-center">
+            <li class="nav-item active">
+              <a class="nav-link" (click)="navigateToProfile()">
+                  МОЙ ПРОФИЛЬ <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">МОИ ДРУЗЬЯ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#">МОЯ КОМАНДА</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#">МОИ ДОСТИЖЕНИЯ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#">СПОНСОРЫ</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!--component user-profile END-->
+
+    </div>
+    <div class="clearfix visible-xs-block"></div>
+
+
+    <div class="container bg-gray pt-2">
+
+      <!--stats-statistic-side-->
+      <div class="stats">
+        <div class="col-md-4 pr-0">
+          <div class="stats-statistic-side row">
+            <div class="col-md-12">
+              <div class="row pb-0">
+                <h2 class="pull-left">Статистика</h2>
+                <div class="dropdown pull-right">
+                  <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Все матчи
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dLabel">
+                    <li>item1</li>
+                    <li>item2</li>
+                    <li>item3</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="row box-info">
+                <div class="col-md-6">
+                  <h4>Матчей сыграно:</h4>
+                  <p>500</p>
+                </div>
+                <div class="col-md-6">
+                  <h4>Матчей сыграно:</h4>
+                  <p class="green">10%</p>
+                </div>
+              </div>
+              <div class="row box-info">
+                <div class="col-md-6">
+                  <h4>Время игры:</h4>
+                  <p>
+                    <span class="orange">5.03</span>(<span class="red">13.1</span>/ 4.7 /<span class="green">10.4</span>)
+                  </p>
+                </div>
+                <div class="col-md-6">
+                  <h4>Ср. время матча:</h4>
+                  <p>
+                    <span class="green">34</span><span class="green">-16</span>
+                  </p>
+                </div>
+              </div>
+              <div class="row box-info">
+                <div class="col-md-6">
+                  <h4>KDA K/D/A</h4>
+                  <p>
+                    500
+                  </p>
+                </div>
+                <div class="col-md-6">
+                  <h4>Матчей сыграно:</h4>
+                  <p>10%</p>
+                </div>
+            </div>
+              <div class="row box-info">
+                <div class="col-md-6">
+                  <h4>Скилл:</h4>
+                  <p>
+                    500
+                  </p>
+                </div>
+                <div class="col-md-6">
+                  <h4>Матчей сыграно:</h4>
+                  <p>10%</p>
+                </div>
+            </div>
+              <div class="row box-info">
+                <div class="col-md-6">
+                  <h4>Серия побед:</h4>
+                  <p>
+                    <span class="green">15</span>
+                  </p>
+                </div>
+                <div class="col-md-6">
+                  <h4>Матчей сыграно:</h4>
+                  <p><span class="red">15</span></p>
+                </div>
+            </div>
+            </div>
+          </div>
+          <div class="stats-records-side row">
+            <div class="col-md-12">
+              <h2 class="mb-1">Рекорды</h2>
+              <div class="card">
+                <p>Самый длинный матч</p>
+                <h2>1:25:23</h2>
+                <p>Abaddon</p>
+                <p class="puny">Победа, 3 месяца назад</p>
+              </div>
+              <div class="card">
+                <p>Наибольшее количество добиваний</p>
+                <h2>833</h2>
+                <p>Abaddon</p>
+                <p class="puny">Поражение, 11.12.2012</p>
+              </div>
+              <div class="card">
+                <p>Самый длинный матч</p>
+                <h2>1:25:23</h2>
+                <p>Abaddon</p>
+                <p class="puny">Победа, 3 месяца назад</p>
+              </div>
+              <div class="card">
+                <p>Самый длинный матч</p>
+                <h2>1:25:23</h2>
+                <p>Abaddon</p>
+                <p class="puny">Победа, 3 месяца назад</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="stats-compare-user row">
+            <div class="col-md-12">
+              <h2>Сравнительная Статистика Игрока</h2>
+              <table class="table-striped table-player-comparing mb-1">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>
+                      <div class="image-hover-box">
+                        <i class="icon icon-close-big"></i>
+                        <img alt="64x64" class="media-object img-circle" src="http://api.randomuser.me/portraits/men/50.jpg">
+                      </div>
+                    </th>
+                    <th>
+                      <div class="image-hover-box">
+                        <i class="icon icon-close-big"></i>
+                        <img alt="64x64" class="media-object img-circle" src="http://api.randomuser.me/portraits/men/51.jpg">
+                      </div>
+                    </th>
+                    <th class="text-center"><i class="fa fa-plus-square"></i></th>
+                    <th class="text-center"><i class="fa fa-plus-square"></i></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>Игрок:</th>
+                    <td><span class="blue">International</span></td>
+                    <td><span class="blue">TheMaroudeR</span></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>Рейтинг:</th>
+                    <td>197</td>
+                    <td>240</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>Матчи:</th>
+                    <td>1043</td>
+                    <td>1526</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>% побед:</th>
+                    <td>100500</td>
+                    <td>200600</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>% пиков:</th>
+                    <td>52</td>
+                    <td>32</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="text-center">
+                <ul class="nav nav-pills selector selector-secondary">
+                  <li><span>Больше информации:</span></li>
+                  <li class="active"><a class="link">Купить обзор</a></li>
+                </ul>
+                <hr>
+                <ul class="nav nav-pills selector">
+                  <li><a class="link">Напарники</a></li>
+                  <li class="active"><a class="link">Противники</a></li>
+                </ul>
+              </div>
+              <div class="toggle-box mt-1">
+                <ul class="clearfix">
+                  <li>
+                    <img alt="64x64" class="media-object img-circle" src="http://api.randomuser.me/portraits/men/56.jpg">
+                    <p>NonOfYourBusin</p>
+                  </li>
+                  <li>
+                    <img alt="64x64" class="media-object img-circle" src="http://api.randomuser.me/portraits/men/55.jpg">
+                    <p>NonOfYourBusin</p>
+                  </li>
+                  <li>
+                    <img alt="64x64" class="media-object img-circle" src="http://api.randomuser.me/portraits/men/57.jpg">
+                    <p>NonOfYourBusin</p>
+                  </li>
+                  <li>
+                    <img alt="64x64" class="media-object img-circle" src="http://api.randomuser.me/portraits/men/58.jpg">
+                    <p>ajangajang</p>
+                  </li>
+                  <li>
+                    <img alt="64x64" class="media-object img-circle" src="http://api.randomuser.me/portraits/men/59.jpg">
+                    <p>Non OfYour Busin</p>
+                  </li>
+                  <li>
+                    <img alt="64x64" class="media-object img-circle" src="http://api.randomuser.me/portraits/men/60.jpg">
+                    <p>Non Of Your Busin</p>
+                  </li>
+                  <li>
+                    <img alt="64x64" class="media-object img-circle" src="http://api.randomuser.me/portraits/men/61.jpg">
+                    <p>NonOfYourBusin</p>
+                  </li>
+                </ul>
+                <button class="btn btn-sm btn-secondary">Свернуть <i class="fa fa-angle-up"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="stats-hero-famous row">
+            <div class="col-md-12">
+              <h2>Часто выбираемые герои</h2>
+              <ul class="nav nav-pills selector">
+                <li class="active"><a class="link">Все Уровни</a></li>
+                <li><a class="link">Чемпионат</a></li>
+                <li><a class="link">Очень высокий</a></li>
+                <li><a class="link">Купить обзор</a></li>
+              </ul>
+              <h2 class="mt-1">Часто выбираемые герои</h2>
+              <div class="table-wrapper">
+                <table class="table table-heroes table-striped mt-2 mb-0">
+                  <thead>
+                  <tr>
+                    <th>Герой</th>
+                    <th>Матчи</th>
+                    <th>% побед</th>
+                    <th>Личный KDA</th>
+                    <th>Средний KDA</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <th scope="row">
+                      <img alt="Generic placeholder image" class="team-logo" src="https://api.randomuser.me/portraits/women/74.jpg">
+                      <span>Ogre Magi</span>
+                    </th>
+                    <td>200</td>
+                    <td class="green">62,50%</td>
+                    <td><span class="orange">5.03</span>(13.1/4.7/0.4)</td>
+                    <td class="orange">2.16</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      <img alt="Generic placeholder image" class="team-logo" src="https://api.randomuser.me/portraits/women/75.jpg">
+                      <span>Rubick</span>
+                    </th>
+                    <td>200</td>
+                    <td class="green">62,50%</td>
+                    <td><span class="orange">5.03</span>(13.1/4.7/0.4)</td>
+                    <td class="orange">2.16</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      <img alt="Generic placeholder image" class="team-logo" src="https://api.randomuser.me/portraits/women/76.jpg">
+                      <span>Ogre Magi</span>
+                    </th>
+                    <td>200</td>
+                    <td class="green">62,50%</td>
+                    <td><span class="orange">5.03</span>(13.1/4.7/0.4)</td>
+                    <td class="orange">2.16</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      <img alt="Generic placeholder image" class="team-logo" src="https://api.randomuser.me/portraits/women/77.jpg">
+                      <span>Rubick</span>
+                    </th>
+                    <td>200</td>
+                    <td class="green">62,50%</td>
+                    <td><span class="orange">5.03</span>(13.1/4.7/0.4)</td>
+                    <td class="orange">2.16</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      <img alt="Generic placeholder image" class="team-logo" src="https://api.randomuser.me/portraits/women/78.jpg">
+                      <span>lo</span>
+                    </th>
+                    <td>200</td>
+                    <td class="green">62,50%</td>
+                    <td><span class="orange">5.03</span>(13.1/4.7/0.4)</td>
+                    <td class="orange">2.16</td>
+                  </tr>
+                  </tbody>
+                </table>
+                <!--<nav aria-label="table navigation" class="table-pagination">
+                  <ul class="pagination m-0">
+                    <li class="page-item">
+                      <div class="page-link" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                      </div>
+                    </li>
+                    <li class="page-item"><a class="link page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="link page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="link page-link" href="#">3</a></li>
+                    <li class="page-item">
+                      <div class="page-link" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                      </div>
+                    </li>
+                  </ul>
+                </nav>-->
+                <button class="btn btn-sm btn-transparent">Свернуть <i class="fa fa-angle-up"></i></button>
+              </div>
+              <h2 class="mt-1">Последние матчи</h2>
+              <div class="table-wrapper">
+                <table class="table table-last-matches table-striped mt-2 mb-0">
+                  <thead>
+                  <tr>
+                    <th>Герой</th>
+                    <th>ID матча</th>
+                    <th>Когда</th>
+                    <th>Результат</th>
+                    <th>KDA</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <th scope="row">
+                      <img alt="Generic placeholder image" class="team-logo" src="https://api.randomuser.me/portraits/women/74.jpg">
+                      <div>
+                        <p>Ogre Magi</p>
+                        <p>Очень высокий</p>
+                      </div>
+                    </th>
+                    <td>2341234556</td>
+                    <td>41 мин назад</td>
+                    <td><span class="green">Победа</span></td>
+                    <td><span class="orange">7.03</span>(12.1/4.7/0.4)</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      <img alt="Generic placeholder image" class="team-logo" src="https://api.randomuser.me/portraits/women/70.jpg">
+                      <div>
+                        <p>Ogre Magi</p>
+                        <p>Нормальный</p>
+                      </div>
+                    </th>
+                    <td>2341234556</td>
+                    <td>41 мин назад</td>
+                    <td><span class="red">Поражение</span></td>
+                    <td><span class="orange">7.03</span>(12.1/4.7/0.4)</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      <img alt="Generic placeholder image" class="team-logo" src="https://api.randomuser.me/portraits/women/71.jpg">
+                      <div>
+                        <p>Ogre Magi</p>
+                        <p>Очень высокий</p>
+                      </div>
+                    </th>
+                    <td>2341234556</td>
+                    <td>41 мин назад</td>
+                    <td><span class="green">Победа</span></td>
+                    <td><span class="orange">7.03</span>(12.1/4.7/0.4)</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      <img alt="Generic placeholder image" class="team-logo" src="https://api.randomuser.me/portraits/women/72.jpg">
+                      <div>
+                        <p>Ogre Magi</p>
+                        <p>Очень высокий</p>
+                      </div>
+                    </th>
+                    <td>2341234556</td>
+                    <td>41 мин назад</td>
+                    <td><span class="green">Победа</span></td>
+                    <td><span class="orange">7.03</span>(12.1/4.7/0.4)</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      <img alt="Generic placeholder image" class="team-logo" src="https://api.randomuser.me/portraits/women/73.jpg">
+                      <div>
+                        <p>Ogre Magi</p>
+                        <p>Очень высокий</p>
+                      </div>
+                    </th>
+                    <td>2341234556</td>
+                    <td>41 мин назад</td>
+                    <td><span class="green">Победа</span></td>
+                    <td><span class="orange">7.03</span>(12.1/4.7/0.4)</td>
+                  </tr>
+                  </tbody>
+                </table>
+                <!--<nav aria-label="table navigation" class="table-pagination">
+                  <ul class="pagination m-0">
+                    <li class="page-item">
+                      <div class="page-link" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                      </div>
+                    </li>
+                    <li class="page-item"><a class="link page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="link page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="link page-link" href="#">3</a></li>
+                    <li class="page-item">
+                      <div class="page-link" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                      </div>
+                    </li>
+                  </ul>
+                </nav>-->
+                <button class="btn btn-sm btn-transparent">Свернуть <i class="fa fa-angle-up"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="stats-radial-diagram row">
+            <div class="col-md-12 mb-1">
+              <h2 class="mb-1">Радарная Диаграма</h2>
+              <ul class="nav nav-pills selector">
+                <li class="active"><a class="link">Все матчи</a></li>
+                <li><a class="link">Последние 20</a></li>
+                <li><a class="link">Последние 100</a></li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+                <div class="row box-info">
+                  <div class="col-md-4">
+                    <h4>Матчи</h4>
+                    <p>500</p>
+                  </div>
+                  <div class="col-md-4">
+                    <h4>% побед</h4>
+                    <p><span class="green">10%</span></p>
+                  </div>
+                  <div class="col-md-4">
+                    <h4>Overall (?)</h4>
+                    <p >40</p>
+                  </div>
+                </div>
+                <div class="row box-info">
+                  <div class="col-md-4">
+                    <h4>KDA</h4>
+                    <p><span class="orange">500</span></p>
+                  </div>
+                  <div class="col-md-4">
+                    <h4>GPM</h4>
+                    <p><span class="orange">10%</span></p>
+                  </div>
+                  <div class="col-md-4">
+                    <h4>XPM</h4>
+                    <p>573.6</p>
+                  </div>
+                </div>
+                <div class="row box-info">
+                  <div class="col-md-4">
+                    <h4>LH/10</h4>
+                    <p>500</p>
+                  </div>
+                  <div class="col-md-4">
+                    <h4>DPM</h4>
+                    <p><span class="red">10%</span></p>
+                  </div>
+                </div>
+              </div>
+            <div class="col-md-6">
+              <div class="hexagon-wrapper">
+                <div class="hexagon bg-gray"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!--stats-statistic-side END-->
+
+        <pages></pages>
+
+  </div>
+</div>
+<!--/row-->
+
+</div>
+<!-- /container -->
+
+
+<footer class="footer">
+  <div class="container-fluid">
+    <span class="text-muted">Все права защищены</span>
+  </div>
+</footer>
+<!--<background-panel></background-panel>-->
+
+<modal-adapter></modal-adapter>

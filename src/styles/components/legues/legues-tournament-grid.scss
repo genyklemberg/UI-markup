@@ -1,0 +1,358 @@
+.leagues-tournament-grid {
+  padding: 1rem;
+  margin-bottom: 1rem;
+
+  $color-white:   $white;
+  $color-black:   $cornflower;
+  $color-primary: $shuttleGray-dark;
+  $color-primary-hover: $shuttleGray-light;
+
+  // Variables
+  $match-width: 12rem;
+  $match-height: 5rem;
+  $match-gap: 2rem;
+  $match-line-width: 1rem;
+  $team-info-width: 1.5rem;
+  $match-horizontal-gap: 4rem;
+  $group-gap: 2rem;
+  $match-connection-border: 2px solid #8fa1b3;
+  $border-radius: 0;
+  $max-power-of-two: 3; // max x where 2**x is max teams, 8 means max number of teams is 256
+
+  // Utils
+  @function pow($number, $exponent) {
+    $value: 1;
+    @if $exponent > 0 {
+      @for $i from 1 through $exponent {
+        $value: $value * $number;
+      }
+    }
+    @return $value;
+  }
+
+  // Common style
+  @import url("https://fonts.googleapis.com/css?family=Roboto:400,300,700");
+
+
+  .row {
+    background-color: $shark;
+    h1 {
+      font-weight: 700;
+      text-transform: uppercase;
+      text-align: center;
+      color: $color-white;
+      padding: .75rem 0;
+      margin: 0 0 1rem;
+    }
+  }
+
+  // Code
+  @keyframes show-match {
+    0% {
+      opacity: 0;
+      transform: translate(-5rem, 0);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+  }
+
+
+  .tournament {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    .round {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+
+      .match-third-place,
+      .match {
+        width:  $match-width;
+        height: $match-height;
+        margin: $match-gap / 2;
+        margin-right: $match-horizontal-gap / 2;
+        margin-left:  $match-horizontal-gap / 2;
+        box-sizing: border-box;
+
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-around;
+
+        background-color: $color-primary;
+        color: $color-black;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: $color-primary-hover;
+        }
+
+        will-change: transform, opacity;
+        opacity: 0;
+        animation-name: show-match;
+        animation-duration: .5s;
+        animation-timing-function: ease-out;
+        animation-direction: normal;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+
+        position: relative;
+        &:after {
+          content: "";
+          display: block;
+          position: absolute;
+          left: calc(100% + 3px);
+          width: calc(1rem - 3px);
+          border-right: $match-connection-border;
+        }
+
+        &:nth-child(2n-1):after {
+          top: 50%;
+          border-top: $match-connection-border;
+          border-radius: 0 $border-radius 0 0;
+        }
+
+        &:nth-child(2n):after {
+          bottom: 50%;
+          border-bottom: $match-connection-border;
+          border-radius: 0 0 $border-radius 0;
+        }
+        .title {
+          position: relative;
+          top: -25px;
+          height: 0;
+          color: $white;
+          @extend .strong;
+          span {
+            color: $iron;
+          }
+        }
+        .teams {
+          display: flex;
+          flex-flow: column nowrap;
+          align-items: stretch;
+          height: 5rem;
+          &:before {
+            content: "";
+            width: $team-info-width;
+            left: -$team-info-width;
+            height: 100%;
+            position: absolute;
+            background: #667380 url($assetPath + "img/icons/info-icon.svg") no-repeat 50%;
+          }
+          .team {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            height: 50%;
+            line-height: $match-height/2;
+            border-top: 1px solid #667380;
+            border-bottom: 1px solid #667380;
+            &:before {
+              content: "";
+              display: block;
+              position: absolute;
+              top: 37%;
+              width: calc(1.5rem - 3px);
+              left: -3rem;
+              border: 0;
+              z-index: -1;
+            }
+
+            .team-flag {
+              flex: none;
+              //padding: 1rem .5rem
+              width: 40px;
+              height: 30px;
+              border-radius: 2px;
+              background-color: #667380;
+              margin: auto auto auto 5px;
+              span.flag{
+                position: relative;
+                top: 50%;
+                left: 50%;
+                transform: translateY(-50%) translateX(-50%);
+              }
+            }
+            .team-name {
+              flex-basis: 100%;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              padding: 0 .5rem;
+            }
+            .team-score {
+              flex: none;
+              color: $color-white;
+              width: 2rem;
+              text-align: center;
+              font-weight: 700;
+              background-color: rgb(143, 161, 179);
+            }
+          }
+        }
+
+        &-winners {
+          height: $match-height*2 + 1.25rem;
+          background-color: transparent;
+          &:hover {
+            background-color: transparent;
+          }
+          .teams {
+            height: initial;
+            &:before { content: none; }
+            .team {
+              background-color: $color-primary;
+              border: 0;
+              margin-bottom: 1.25rem;
+              &:hover {
+                background-color: $color-primary-hover;
+              }
+              &:before {
+                height: 3rem;
+                border-top: $match-connection-border;
+                border-radius: 0 0 $border-radius 0;
+                top: 11%;
+                left: -2rem;
+                width: calc( 2rem - 3px);
+              }
+              &:after {
+                content: "";
+                background-image: url($assetPath + "img/icons/gold-trophy.svg");
+                background-size: cover;
+                width: 30px;
+                height: 30px;
+                right: -40px;
+                top: 5px;
+                position: relative;
+                flex: none;
+              }
+              &:nth-child(2){
+                &:before { top: 41%;}
+                &:after { background-position-x: -36px ;}//trophy
+              }
+              &:nth-child(3){
+                &:before { top: 77%; }
+                &:after { background-position-x: -72px ;}
+              }
+            }
+          }
+        }
+      }
+
+      @for $round from 0 through $max-power-of-two {
+        &:nth-child(#{$round + 1}) > .match {
+          $gap: if($round == 0, $match-gap, 2 * pow(2, $round - 1) * ($match-height + $match-gap + $group-gap / 2) - $match-height);
+          margin-top:    $gap / 2;
+          margin-bottom: $gap / 2;
+          &:after {
+            height: $gap / 1.5 ;
+          }
+
+          animation-delay: $round * 0.1s;
+        }
+      }
+
+      &:last-child > .match:after {
+        display: none;
+      }
+
+      &:first-child > .match:nth-child(2n) {
+        margin-bottom: ($match-gap + $group-gap) / 2;
+      }
+
+      &:first-child > .match:nth-child(2n-1) {
+        margin-top: ($match-gap + $group-gap) / 2;
+      }
+      .match-third-place {
+        bottom: 49px;
+        &:nth-child(2n):after {
+          border-right: $match-connection-border;
+          height: 10.88rem;
+        }
+        .teams {
+          .team {
+          &:after,
+          &:before {
+            content: none;
+            clear: both;
+          }
+        }
+        }
+      }
+    }
+    .round {
+      &:nth-child(1) .match {
+        &:after {
+          height: 3rem;
+        }
+        &:before {
+          height: 3rem;
+        }
+        .team {
+          &:nth-child(1):before {
+            content: none;
+          }
+        }
+      }
+      &:nth-child(2) {
+        .team {
+          &:nth-child(2n):before {
+            border-top: $match-connection-border;
+            border-radius: 0 $border-radius 0 0;
+          }
+
+          &:nth-child(2n-1):before {
+            border-top: $match-connection-border;
+            border-radius: 0 0 $border-radius 0;
+            top: 60%;
+          }
+        }
+      }
+      &:nth-child(3) {
+        .match {
+          margin-top: 15.5rem;
+          margin-bottom: 8.5rem;
+        }
+        .team {
+          &:nth-child(2n):before {
+            border-top: $match-connection-border;
+            border-radius: 0 $border-radius 0 0;
+            top: 34%;
+          }
+
+          &:nth-child(2n-1):before {
+            border-top: $match-connection-border;
+            border-radius: 0 0 $border-radius 0;
+            top: 64%;
+          }
+        }
+        .match:nth-child(2n-1):after {
+          border-radius: 0 0 $border-radius 0;
+          height: 6.85rem;
+          bottom: 50%;
+          border-bottom: $match-connection-border;
+          border-top: 0;
+          top: initial;
+        }
+      }
+      &:nth-child(4) {
+        .match {
+          margin-top: 5.5rem;
+          margin-bottom: 10.5rem;
+          margin-left: 1rem;
+          animation-delay: 0.3s;
+        }
+      }
+    }
+
+  }
+
+}

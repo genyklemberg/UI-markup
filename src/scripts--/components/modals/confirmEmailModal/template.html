@@ -1,0 +1,40 @@
+<div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button
+          class="close"
+          type="button"
+          aria-label="Close"
+          (click)="hideConfirmEmailModal()"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="exampleModalLabel">{{ userInformation.userInformation.email ? lS.userLocalization?.modal.send_confirmation : lS.userLocalization?.modal.set_email }}</h4>
+      </div>
+      <div *ngIf="userInformation.userInformation.email">
+        <div class="modal-body">
+          {{ lS.userLocalization?.modal.message }} <a href="#">{{ lS.userLocalization?.modal.settings }}</a>
+        </div>
+        <div class="modal-footer text-xs-left">
+          <button type="button" class="btn btn-primary" (click)="onSubmit()">{{ lS.userLocalization?.modal.send_again }}</button>
+        </div>
+      </div>
+      <div *ngIf="!userInformation.userInformation.email">
+        <form class="form-horizontal clearfix" (ngSubmit)="setEmail(f)" #f="ngForm">
+          <div class="modal-body">
+            <div class="form-group">
+              <input type="email" class="form-control" name="email" placeholder="{{ lS.userLocalization?.modal.email }}" ngModel required>
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" name="password" placeholder="{{ lS.userLocalization?.modal.password }}" ngModel required>
+            </div>
+          </div>
+          <div class="modal-footer text-xs-left">
+            <button type="submit" class="btn btn-primary">{{ lS.userLocalization?.modal.save_email }}</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

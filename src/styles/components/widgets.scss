@@ -1,0 +1,40 @@
+.widget-content {
+  padding: 10px;
+  background-color: $shark;
+  .list-group-item {
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+    width: 100%;
+    margin: 0;
+    padding: 5px 4px;
+  }
+  .name {
+    margin-bottom: 2px;
+  }
+  .flag {
+    width: 16px;
+    //height: 16px;
+    display: block;
+
+    &-usa-16 {
+      background-size: cover;
+      background: url($assetPath + 'img/flags/16/United States of America.png') center center no-repeat;
+    }
+    &-ukraine-16 {
+      background-size: cover;
+      background: url($assetPath + 'img/flags/16/Ukraine.png') center center no-repeat;
+    }
+  }
+  .widget-footer {
+    border-top: 1px solid $shuttleGray-dark;
+    .see-all {
+      font-size: $size-info;
+      text-align: right;
+      margin: 0;
+    }
+  }
+}
+.widget {
+  margin-bottom: 1em;
+}

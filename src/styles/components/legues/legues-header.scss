@@ -1,0 +1,64 @@
+.leagues-header {
+  min-height: 9rem;
+  padding-top: 1rem;
+  padding-bottom: 64px;
+  margin: 0 0 -4rem 0;
+  background-color: rgba(120,120,120,0.25);
+  h1 {
+    text-transform: uppercase;
+    padding-right: 150px;
+  }
+  .media {
+
+    .table-user-information {
+      max-width: 52%;
+      tbody td {
+        padding: 0.5rem;
+      }
+    }
+  }
+
+  button.btn-primary {
+    text-transform: none;
+  }
+  .watched {
+    position: absolute;
+    right: 30px;
+    top: 0;
+  }
+  .width-auto { width: auto; }
+  .match-forecast {
+    .team {
+      text-align: center;
+      width: 5rem;
+      float: left;
+      + span {
+        line-height: 60px;
+        font-size: $size-h1;
+        font-family: $font-bold;
+      }
+      img {
+        width: 5rem;
+        height: 4rem;
+        margin-bottom: $base-margin;
+        border-radius: 0.5rem;
+        background-color: $iron;
+      }
+      p.caption {
+        margin-bottom: $base-margin/2;
+      }
+    }
+    .table-match-forecast {
+      td {
+        padding: 0.5rem;
+        border: 0;
+        font-family: $font-bold;
+      }
+      thead tr td {
+        font-size: $size-puny;
+        font-weight: 400;
+        color: $iron;
+      }
+    }
+  }
+}

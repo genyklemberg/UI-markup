@@ -1,0 +1,34 @@
+.leagues-tournament-about {
+  padding: 1rem;
+  margin-bottom: 1rem;
+
+  .row {
+    background-color: $shark;
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+  }
+  h4 {
+    margin-top: 1.25rem;
+  }
+  p,
+  span {
+    font-size: $size-info;
+    color: $iron;
+  }
+
+  span.match-date {
+    margin-right: $base-margin;
+  }
+
+  .tournament-organizator h4,
+  .tournament-start h4 {
+    margin-top: 0;
+  }
+
+
+  .tournament-general-info,
+  .tournament-organizator,
+  .tournament-judge {
+    p { margin-bottom: 0; }
+  }
+}

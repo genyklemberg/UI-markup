@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <title>71A21CAB-E818-4765-BDF2-605B7DF6922A</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="620" height="30"></rect>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.32   0 0 0 0 0.36   0 0 0 0 0.4  0 0 0 1 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+        <path d="M1.09613463,17.054108 C0.410246173,16.1982068 1.13686838e-13,15.1118837 1.13686838e-13,13.9297424 C1.13686838e-13,12.4380978 0.653185473,11.0990128 1.68913221,10.1829117 C1.2462017,9.18900736 1,8.08812664 1,6.92974244 C1,3.96861301 2.60879452,1.38323768 5,-1.13686838e-13 C7.39120548,1.38323768 9,3.96861301 9,6.92974244 C9,8.08812664 8.7537983,9.18900736 8.31086779,10.1829117 C9.34681453,11.0990128 10,12.4380978 10,13.9297424 C10,15.1118837 9.58975383,16.1982068 8.90386537,17.054108 C8.50457335,15.2661307 6.90835178,13.9297424 5,13.9297424 C3.09164822,13.9297424 1.49542665,15.2661307 1.09613463,17.054108 L1.09613463,17.054108 Z" id="path-3"></path>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="10" height="17.054108" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+        <path d="M6.90372643,15.6813049 C6.38581375,15.2555854 5.72275446,15 5,15 C4.27724554,15 3.61418625,15.2555854 3.09627357,15.6813049 C3.03333323,15.9439338 3,16.2180742 3,16.5 C3,17.896198 3.81752633,19.1014525 5,19.6631844 C6.18247367,19.1014525 7,17.896198 7,16.5 C7,16.2180742 6.96666677,15.9439338 6.90372643,15.6813049 L6.90372643,15.6813049 Z" id="path-5"></path>
+        <mask id="mask-6" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="4" height="4.66318442" fill="white">
+            <use xlink:href="#path-5"></use>
+        </mask>
+        <circle id="path-7" cx="5" cy="7" r="1"></circle>
+        <mask id="mask-8" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="2" height="2" fill="white">
+            <use xlink:href="#path-7"></use>
+        </mask>
+    </defs>
+    <g id="UI-Kit" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="UI-Elements" transform="translate(-593.000000, -1461.000000)">
+            <g id="Lower-Line" transform="translate(30.000000, 1453.000000)">
+                <g id="Rectangle-3-Copy-16">
+                    <use fill="#292E33" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                </g>
+                <g id="Share" transform="translate(571.606602, 15.606602) rotate(-315.000000) translate(-571.606602, -15.606602) translate(566.606602, 5.606602)" stroke="#98D9EF" stroke-width="2">
+                    <use id="Combined-Shape-Copy-3" mask="url(#mask-4)" xlink:href="#path-3"></use>
+                    <use id="Combined-Shape-Copy-4" mask="url(#mask-6)" xlink:href="#path-5"></use>
+                    <use id="Oval-4-Copy-3" mask="url(#mask-8)" xlink:href="#path-7"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

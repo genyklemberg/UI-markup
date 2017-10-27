@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="19px" height="19px" viewBox="0 0 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <title>8CD12A81-8CBD-4EBA-827A-4FF149E8A292</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="30" width="1280" height="50"></rect>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.596078431   0 0 0 0 0.850980392   0 0 0 0 0.937254902  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="UI-Kit" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="UI-Elements" transform="translate(-926.000000, -172.000000)">
+            <g id="Header" transform="translate(30.000000, 126.000000)">
+                <g id="Rectangle-3-Copy">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#292E33" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+                <g id="ios-bell" transform="translate(896.000000, 46.000000)" fill="#FFFFFF">
+                    <g id="Group">
+                        <path d="M10.6646753,1.17265625 C10.6646753,1.14791667 10.6696104,1.12317708 10.6696104,1.09348958 C10.6696104,0.484895833 10.1316883,0 9.47532468,0 C8.81896104,0 8.30077922,0.484895833 8.30077922,1.09348958 C8.30077922,1.12317708 8.30077922,1.14791667 8.30571429,1.17265625 C5.87766234,1.54375 3.27194805,3.19140625 3.27194805,8.02057292 C3.27194805,13.6513021 1.87532468,14.2549479 0,15.8382812 L18.9506494,15.8382812 C17.0851948,14.25 15.6787013,13.6414062 15.6787013,8.01067708 C15.6787013,3.18151042 13.0877922,1.53880208 10.6646753,1.17265625 Z" id="Shape"></path>
+                        <path d="M9.48519481,19 C10.8077922,19 11.8935065,18.0153646 12.0366234,16.8723958 L6.93376623,16.8723958 C7.07194805,18.0153646 8.1625974,19 9.48519481,19 L9.48519481,19 Z" id="Shape"></path>
+                    </g>
+                </g>
+                <circle id="Oval-4" fill="#72C52F" cx="911" cy="49" r="4"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

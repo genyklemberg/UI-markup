@@ -1,0 +1,43 @@
+.leagues-match-forecast {
+  padding: 1rem;
+  margin-bottom: 1rem;
+
+  .row { background-color: $shark; }
+  .border-left { border-left: 1px $shuttleGray-dark solid}
+  input[type='checkbox'] + label {
+    font-size: $size-info;
+    width: 4rem;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 2.5rem;
+    li {
+      margin-bottom: 1rem;
+      img {
+        height: 2.813rem;
+        width: 3.75rem;
+        border-radius: 0.25rem;
+        margin-right: $base-margin;
+        background-color: $shuttleGray-light;
+      }
+    }
+    .item-results {
+      margin-bottom: 2rem;
+      span {
+        min-width: 50px;
+        float: left;
+        line-height: 2rem;
+      }
+      .bar-wrapper {
+        padding-left: 50px;
+        .bar {
+          display: block;
+          background-color: $cornflower;
+          width: 75%;
+          height: 2rem;
+        }
+      }
+    }
+  }
+}

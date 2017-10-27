@@ -1,0 +1,73 @@
+.chat-box {
+  padding: 10px 10px 1rem;
+  width:330px;
+  height: 500px;
+  bottom: 0;
+  right: 5rem;
+  position: absolute;
+  transition: 0.3s;
+  background-color: $mako;
+  overflow: hidden;
+  margin-bottom: 60px;
+
+  &-close {
+    height: 40px;
+    .fa-window-minimize:before {
+      content: "\f2d0";
+    }
+  }
+
+  .chat-header {
+    line-height: 20px;
+    margin-bottom: 10px;
+    .chat-title {
+      font-family: $font-bold;
+      font-size: $size-body;
+    }
+  }
+  .messages-box {
+    overflow-y: auto;
+    max-height: 305px;
+    border: 1px solid $shuttleGray-dark;
+    border-radius: 3px;
+    background-color: $steel;
+    margin-bottom: 1rem;
+    padding: 10px;
+
+    .media {    }
+  }
+  img,
+  .user-logo {
+    border-radius: 50%;
+    height: 30px;
+    background-color: $shuttleGray-light;
+    margin-bottom: $base-margin/2;
+  }
+  .user-reply {
+    p {
+      margin-bottom: 0;
+      line-height: 14px;
+    }
+    &-name {
+      color: $cornflower;
+      font-size: $size-info;
+    }
+    &-time {
+      color: $iron;
+      font-size: $size-puny;
+    }
+    &-message {
+      @extend .puny;
+    }
+  }
+  .current-user-reply {
+    textarea {
+      height: 70px;
+      width: 95%;
+      background-color: $shuttleGray-dark;
+      resize: none;
+      line-height: 14px;
+      color: $iron;
+    }
+  }
+}

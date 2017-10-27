@@ -1,0 +1,156 @@
+<div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog cabinet-add-player-modal" role="document">
+    <!-- cabinet-add-player-modal component-->
+    <div class="modal-content ">
+      <div class="modal-header">
+        <button
+                class="close"
+                type="button"
+                aria-label="Close"
+                (click)="hideRegistrationModal()"
+        >
+          <span aria-hidden="true"></span>
+        </button>
+        <div class="modal-title">
+          <h1>Добавить игрока в команду</h1>
+        </div>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="row">
+            <div class="col-md-12 mb-1">
+              <div class="dropdown dropdown-big d-inline-block mr-1">
+                <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Все игроки
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dLabel">
+                  <li>item1</li>
+                  <li>item2</li>
+                  <li>item3</li>
+                </ul>
+              </div>
+              <input class="form-control d-inline-block" id="modal-search" name="modal-search" placeholder="Search for something..." type="text">
+            </div>
+            <div class="col-md-12 list-group-header">
+              <div class="offset-sm-6 col-sm-1 nopadding">Rate</div>
+              <div class="col-sm-1 nopadding">% wins</div>
+              <div class="col-sm-12 col-md-4 nopadding">KDA K/D/A</div>
+            </div>
+            <div class="col-md-12 mb-1 nopadding">
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <div class="col-sm-1 nopadding">
+                    <input id="check-toggle-1" type="checkbox">
+                    <label for="check-toggle-1" class="d-block"></label>
+                  </div>
+                  <div class="col-sm-12 col-md-1 nopadding text-xs-center">
+                    <img src="http://api.randomuser.me/portraits/men/29.jpg" alt="Scott Stevens" class="img-thumbnail rounded-circle">
+                  </div>
+                  <div class="col-sm-12 col-md-4 pr-0 name">
+                    <p class="blue base">Patrick Smith</p>
+                    <p>Bradley Rodriquez</p>
+                    <p><img alt="flag" class="img-thumbnail img-width-16" src="https://img.abiosgaming.com/flags/Malaysia.png"></p>
+                  </div>
+                  <div class="col-sm-1 nopadding">
+                    233
+                  </div>
+                  <div class="col-sm-1 nopadding green">
+                    46
+                  </div>
+                  <div class="col-sm-12 col-md-4 nopadding">
+                    <span class="orange">5.03</span>(<span class="red">13.1</span>/ 4.7 /<span class="green">10.4</span>)
+                  </div>
+                  <div class="clearfix"></div>
+                </li>
+                <li class="list-group-item">
+                  <div class="col-sm-1 nopadding">
+                    <input id="check-toggle-2" type="checkbox">
+                    <label for="check-toggle-2" class="d-block"></label>
+                  </div>
+                  <div class="col-sm-12 col-md-1 nopadding text-xs-center">
+                    <img src="http://api.randomuser.me/portraits/men/19.jpg" alt="Scott Stevens" class="img-thumbnail rounded-circle">
+                  </div>
+                  <div class="col-sm-12 col-md-4 pr-0 name">
+                    <p class="blue base">Patrick Smith</p>
+                    <p>Bradley Rodriquez</p>
+                    <p><img alt="flag" class="img-thumbnail img-width-16" src="https://img.abiosgaming.com/flags/Malaysia.png"></p>
+                  </div>
+                  <div class="col-sm-1 nopadding">
+                    233
+                  </div>
+                  <div class="col-sm-1 nopadding green">
+                    46
+                  </div>
+                  <div class="col-sm-12 col-md-4 nopadding">
+                    <span class="orange">5.03</span>(<span class="red">13.1</span>/ 4.7 /<span class="green">10.4</span>)
+                  </div>
+                  <div class="clearfix"></div>
+                </li>
+                <li class="list-group-item">
+                  <div class="col-sm-1 nopadding">
+                    <input id="check-toggle-3" type="checkbox">
+                    <label for="check-toggle-3" class="d-block"></label>
+                  </div>
+                  <div class="col-sm-12 col-md-1 nopadding text-xs-center">
+                    <img src="http://api.randomuser.me/portraits/men/39.jpg" alt="Scott Stevens" class="img-thumbnail rounded-circle">
+                  </div>
+                  <div class="col-sm-12 col-md-4 pr-0 name">
+                    <p class="blue base">Patrick Smith</p>
+                    <p>Bradley Rodriquez</p>
+                    <p><img alt="flag" class="img-thumbnail img-width-16" src="https://img.abiosgaming.com/flags/Malaysia.png"></p>
+                  </div>
+                  <div class="col-sm-1 nopadding">
+                    233
+                  </div>
+                  <div class="col-sm-1 nopadding green">
+                    46
+                  </div>
+                  <div class="col-sm-12 col-md-4 nopadding">
+                    <span class="orange">5.03</span>(<span class="red">13.1</span>/ 4.7 /<span class="green">10.4</span>)
+                  </div>
+                  <div class="clearfix"></div>
+                </li>
+                <li class="list-group-item">
+                  <div class="col-sm-1 nopadding">
+                    <input id="check-toggle-4" type="checkbox">
+                    <label for="check-toggle-4" class="d-block"></label>
+                  </div>
+                  <div class="col-sm-12 col-md-1 nopadding text-xs-center">
+                    <img src="http://api.randomuser.me/portraits/men/49.jpg" alt="Scott Stevens" class="img-thumbnail rounded-circle">
+                  </div>
+                  <div class="col-sm-12 col-md-4 pr-0 name">
+                    <p class="blue base">Patrick Smith</p>
+                    <p>Bradley Rodriquez</p>
+                    <p><img alt="flag" class="img-thumbnail img-width-16" src="https://img.abiosgaming.com/flags/Malaysia.png"></p>
+                  </div>
+                  <div class="col-sm-1 nopadding">
+                    233
+                  </div>
+                  <div class="col-sm-1 nopadding green">
+                    46
+                  </div>
+                  <div class="col-sm-12 col-md-4 nopadding">
+                    <span class="orange">5.03</span>(<span class="red">13.1</span>/ 4.7 /<span class="green">10.4</span>)
+                  </div>
+                  <div class="clearfix"></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <div class="container-fulid">
+          <div class="row">
+            <div class="col-md-12">
+              <button type="button" class="btn btn-secondary">ОТМЕНА</button>
+              <button type="button" class="btn btn-primary ml-1">ДОБАВИТЬ</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End component- -->
+  </div>
+</div>

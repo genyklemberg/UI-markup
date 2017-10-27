@@ -1,0 +1,103 @@
+.leagues-countdown {
+  width: 295px;
+  top: -20px;
+  float: right;
+  padding-right: 15px;
+  padding-left: 15px;
+  position: relative;
+
+  .events-count-down {
+    position: absolute;
+    display: block;
+    color: $white;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    &:before {
+      content: 'time left';
+      text-transform: uppercase;
+      background-color: rgba(65, 65, 65, 0.5);
+      font-family: $font-h1;
+      display: block;
+      font-size: $size-body;
+      line-height: 28px;
+      width: 100%;
+      margin-bottom: 3px;
+    }
+
+    .hide-countDownBox {
+      display: none;
+    }
+
+    .events-count-down__month,
+    .events-count-down__day,
+    .events-count-down__hour,
+    .events-count-down__minute,
+    .events-count-down__second{
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      width: 23.4%;
+      margin: 0 1% 0 0;
+      height: 50px;
+      line-height: 50px;
+      font-family: $font-h1;
+      font-size: 1.75rem;
+      //color: #cecece;
+      background-color: #cecece;
+      display: inline-block;
+      position: relative;
+      &:after {
+        content: '';
+        text-transform: uppercase;
+        background-color: rgba(65, 65, 65, 0.5);
+        font-family: $font-bold;
+        display: block;
+        position: absolute;
+        height: 24px;
+        width: 100%;
+        top: 100%;
+        margin-top: 3px;
+        font-size: 10px;
+        line-height: 22px;
+        color: $white;
+      }
+    }
+
+    .events-count-down__month:after { content: 'month'; }
+    .events-count-down__day:after { content: 'days'; }
+    .events-count-down__hour:after { content: 'hrs'; }
+    .events-count-down__minute:after { content: 'min'; }
+    .events-count-down__second:after { content: 'sec'; }
+
+    span:last-child {
+      margin-right: 0;
+    }
+  }
+
+
+  .events-count-down.hide-month > .events-count-down__month {
+    display: none;
+  }
+
+  .events-count-down.hide-days > .events-count-down__day {
+    display: none;
+  }
+
+  .events-count-down.hide-seconds > .events-count-down__second {
+    display: none;
+  }
+
+  .events-count-down.hide-month.hide-days > .events-count-down__minute {
+    margin: 0 1% 0 0;
+  }
+
+  .events-count-down.hide-month.hide-days > span {
+    width: 31.660%;
+  }
+
+  .events-count-down.hide-seconds > .events-count-down__minute {
+    margin-right: 0;
+  }
+
+}

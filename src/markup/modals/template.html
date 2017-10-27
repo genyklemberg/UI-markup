@@ -1,0 +1,14 @@
+<div [ngSwitch]="modalService.activeModal">
+  <template [ngSwitchCase]="Modal.REGISTRATION">
+    <registration-modal></registration-modal>
+  </template>
+  <template [ngSwitchCase]="Modal.LOGIN">
+    <login-modal></login-modal>
+  </template>
+  <template [ngSwitchCase]="Modal.CONFIRM_EMAIL">
+    <confirm-email-modal></confirm-email-modal>
+  </template>
+  <template [ngSwitchCase]="Modal.ADD_NEWS_MODAL">
+    <add-news-modal></add-news-modal>
+  </template>
+</div>

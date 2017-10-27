@@ -1,0 +1,222 @@
+/*
+table styles is in : table-common.scss
+*/
+.achievements-site {
+  //padding: 1rem;
+  //margin-bottom: 1rem;
+  .row {
+    background-color: $shark;
+    padding: 1rem 0;
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+  .border-left { border-left: 1px $shuttleGray-dark solid}
+
+  table.table-achivments {
+    thead th {
+      border: 0;
+      font-size: $size-table;
+      font-family: $font-bold;
+      padding-top: 0;
+      padding-bottom: 0.5rem;
+      &:first-child {
+        border-left: 0;
+      }
+    }
+    tbody {
+      tr {
+        border-top: 1px solid $shuttleGray-light;
+        td,
+        th {
+          color: $iron;
+          @extend .caption;
+          line-height: $line-height-h4;
+          border-left: 0;
+          border-top: 0;
+        }
+        th {
+          &:first-child {
+            color: $cornflower;
+            border-left: 0;
+          }
+        }
+        td {
+          &:last-child {
+            color: $white;
+            border-left: 0;
+            font-family: $font-h1;
+            font-size: $size-h1;
+          }
+        }
+      }
+    }
+  }
+
+  .wrapper-chart {
+    ul {
+      list-style-type: none;
+      padding: $base-margin;
+      float: left;
+      li {
+        position: relative;
+        width: 80px;
+        padding: 5px 10px;
+        color: $cornflower;
+
+        &.active {
+          background: $shuttleGray-light;
+          &:before {
+            border-left: 10px solid $shuttleGray-light;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            content: "";
+            height: 0;
+            left: 80px;
+            position: absolute;
+            top: 0;
+            width: 0;
+          }
+        }
+      }
+    }
+    .chart-results {
+      padding-left: 90px;
+      .charts {
+        height: 220px;
+        background-color: $brightGray-70;
+        padding: 0 10%;
+        text-align: center;
+        .chart {
+          width: 12.31%;
+          background-color: $butterCup;
+          height: 105px;
+          display: inline-block;
+          margin: 5%;
+          position: relative;
+          bottom: -50px;
+          vertical-align: bottom;
+          span {
+            position: relative;
+            top: -20px;
+            margin: 0 auto;
+            color: $iron;
+            @extend .puny;
+          }
+        }
+      }
+      .charts-pagination {
+        position: relative;
+        top: -50px;
+        width: 100%;
+        ul {
+          width: 100%;
+          text-align: center;
+          padding: 10px 0;
+          li {
+            width: 18%;
+            padding: 5px 0;
+            display: inline-block;
+            color: $iron;
+            @extend .puny;
+          }
+        }
+        button {
+          background-color: $cornflower;
+          &.carousel-item-prev {
+            background-image: url($assetPath + "img/icons/social/social-facebook.svg");
+          }
+          &.carousel-item-next {
+          }
+        }
+      }
+
+    }
+  }
+
+  .user-activity {
+    $box-width: 3.75rem;
+    ul {
+      list-style-type: none;
+      padding: $base-margin;
+      width: 100%;
+      li {
+        position: relative;
+        height: 60px;
+        padding: 0 $base-margin*2 0 0;
+        margin-bottom: $base-margin/2;
+        background-color: $brightGray-70;
+
+        .gray-box {
+          width: $box-width;
+          height: $box-width;
+          background: $iron;
+          float: left;
+          &:before {
+            border-left: 10px solid $iron;
+            border-top: 30px solid transparent;
+            border-bottom: 30px solid transparent;
+            content: "";
+            height: 0;
+            left: 60px;
+            position: absolute;
+            top: 0;
+            width: 0;
+          }
+        }
+        .user-details {
+          margin-left: 3.75 + $base-margin*2;
+          font-size: $size-info;
+          p {
+            margin-bottom: 5px;
+            padding-top: 5px;
+          }
+          .progress-box {
+            span {
+              min-width: 35px;
+              display: inline-block;
+              color: $iron;
+            }
+            .progress-bar {
+              width: 78%;
+              height: 10px;
+              background-color: $shuttleGray-dark;
+              display: inline-block;
+              .progress-current {
+                width: 80%;/*TODO: set me via js*/
+                height: 100%;
+                background-color: $cornflower;
+              }
+            }
+            .level {
+              float: right;
+              color: $iron;
+              position: relative;
+              top: -26px;
+              h2 { text-align: right; }
+
+            }
+          }
+        }
+      }
+    }
+  }
+  .user-common-achievement {
+    table.table-achivments {
+      tbody {
+        th,td {vertical-align: middle;}
+        th:first-child { color: $iron; }
+        tr { border-top: 0;}
+        td {
+          &:last-child {
+            border-left: 1px solid $shuttleGray-dark;
+            font-size: $size-base;
+            color: $iron;
+            text-align: center;
+          }
+          border-left: 1px solid $shuttleGray-dark;
+        }
+      }
+    }
+  }
+
+}

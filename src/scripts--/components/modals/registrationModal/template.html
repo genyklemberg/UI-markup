@@ -1,0 +1,73 @@
+<div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button
+          class="close"
+          type="button"
+          aria-label="Close"
+          (click)="hideRegistrationModal()"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h1 class="modal-title" id="exampleModalLabel">Регитрация</h1>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="name" class="form-control-label">Имя:</label>
+            <input
+              id="name"
+              class="form-control"
+              type="text"
+              [(ngModel)]="name"
+              [ngModelOptions]="{ standalone: true }"
+            >
+          </div>
+          <div class="form-group">
+            <label for="nickname" class="form-control-label">Игровой ник:</label>
+            <input
+              id="nickname"
+              class="form-control"
+              type="text"
+              [(ngModel)]="nickname"
+              [ngModelOptions]="{ standalone: true }"
+            >
+          </div>
+          <div class="form-group">
+            <label for="email" class="form-control-label">Адресс електронной почты:</label>
+            <input
+              id="email"
+              class="form-control"
+              type="text"
+              [(ngModel)]="email"
+              [ngModelOptions]="{ standalone: true }"
+            >
+          </div>
+          <div class="form-group">
+            <label for="password" class="form-control-label">Пароль:</label>
+            <input
+              id="password"
+              class="form-control"
+              type="password"
+              [(ngModel)]="password"
+              [ngModelOptions]="{ standalone: true }"
+            >
+          </div>
+        </form>
+        <a [href]="restUrl + '/auth/steam'">Steam</a>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-dismiss="modal"
+          (click)="hideRegistrationModal()"
+        >
+          Закрыть
+        </button>
+        <button type="button" class="btn btn-primary" (click)="onSubmit()">Регистрация</button>
+      </div>
+    </div>
+  </div>
+</div>

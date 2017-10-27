@@ -1,0 +1,20 @@
+.statistic-header {
+  min-height: 134px;
+  padding-top: 1rem;
+  padding-bottom: 64px;
+  margin: 0 0 -4rem 0;
+  background-color: rgba(120,120,120,0.25);
+  h1 {
+    text-transform: uppercase;
+    padding-right: 210px;
+  }
+  .wrapper-dropdown {
+    p {
+      line-height: 30px;
+      margin-right: 1rem;
+      margin-bottom: 0;
+      color: $iron;
+      font-size: $size-info;//12px
+    }
+  }
+}

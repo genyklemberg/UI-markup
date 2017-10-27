@@ -1,0 +1,76 @@
+
+.leagues-tournament-win {
+  padding: 1rem;
+  margin-bottom: 1rem;
+
+  .row { background-color: $shark; }
+
+  .title {
+    @extend .caption;
+    @extend .caption-gray;
+    margin-top: $base-margin;
+  }
+
+  .media {
+    img,
+    .trophy {
+      .fa {
+        background-image: url("../assets/img/icons/gold-trophy.svg");
+        width: 60px;
+        height: 60px;
+        background-size: cover;
+      }
+      .fa-trophy {
+        &-gold {
+          background-position: 0 0;
+        }
+        &-silver {
+          background-position: -72px 0;
+          transform: scale(0.8334);
+        }
+        &-bronze {
+          background-position: -144px 0;
+          transform: scale(0.6667);
+        }
+      }
+    }
+
+    img.team-logo-small {
+      width: 40px;
+      height: 30px;
+      background-color: $shuttleGray-light;
+      margin-bottom: $base-margin/2;
+    }
+
+    .award-price{
+      max-width: 80px;
+    }
+
+    .image-box {
+      position: relative;
+      -webkit-box-flex: auto;
+      -ms-flex: auto;
+      flex: auto;
+      max-width: 80px;
+      margin: .5vw;
+    }
+    .featuredText {
+      display: inline-block;
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%);
+      font-size: 1rem;
+      font-family: $font-bold;
+      text-align: center;
+    }
+  }
+  .sponsors {
+    list-style: none;
+    padding: 0;
+    li {
+      color: $cornflower;
+    }
+  }
+}

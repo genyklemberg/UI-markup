@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <title>DC757E16-59F0-4D71-B558-8EB0E6E8334F</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="620" height="30"></rect>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.32   0 0 0 0 0.36   0 0 0 0 0.4  0 0 0 1 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+        <path d="M28.8076923,21.5384615 C29.3615385,21.5384615 29.3615385,21.5423077 29.6269231,21.7384615 C29.8923077,21.9346154 32.9230769,24 32.9230769,24 L32.9230769,21.5384615 L33.0653846,21.5384615 C34.6884615,21.5384615 36,20.3153846 36,18.7923077 L36,10.7576923 C36,9.23461538 34.6846154,8 33.0653846,8 L22.9346154,8 C21.3153846,8 20,9.23461538 20,10.7576923 L20,18.7923077 C20,20.3153846 21.3153846,21.5384615 22.9346154,21.5384615 L28.8076923,21.5384615 Z" id="path-3"></path>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="16" height="16" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+    </defs>
+    <g id="UI-Kit" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="UI-Elements" transform="translate(-50.000000, -1461.000000)">
+            <g id="Lower-Line" transform="translate(30.000000, 1453.000000)">
+                <g id="Rectangle-3-Copy-16">
+                    <use fill="#292E33" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                </g>
+                <use id="Comment" stroke="#98D9EF" mask="url(#mask-4)" stroke-width="2" xlink:href="#path-3"></use>
+            </g>
+        </g>
+    </g>
+</svg>

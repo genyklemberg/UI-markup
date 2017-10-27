@@ -1,0 +1,166 @@
+<div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <!-- news-create/news-create-guide component-->
+    <div class="modal-content news-create news-create-guide">
+      <div class="modal-header">
+        <button
+                class="close"
+                type="button"
+                aria-label="Close"
+                (click)="hideRegistrationModal()"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h1 class="modal-title">Создать публикацию</h1>
+      </div>
+      <div class="modal-body">
+        <form>
+          <h3 class="mt-1">Категория</h3>
+          <div class="row">
+            <div class="col-md-3">
+              <ul class="nav nav-pills selector">
+                <li role="presentation" class="active"><a class="link">Home</a></li>
+                <li role="presentation"><a class="link">Profile</a></li>
+              </ul>
+            </div>
+            <div class="col-md-9">
+              <select class="form-control">
+                <option>Выберите тематику публикации</option>
+                <option>публикация 1</option>
+                <option>публикация 2</option>
+                <option>публикация 3</option>
+                <option>публикация 4</option>
+              </select>
+            </div>
+          </div>
+
+          <h3 class="mt-1">Заглавие</h3>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="form-group">
+                <input class="form-control"type="text" >
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="panel panel-primary mt-1">
+                <h3 class="pull-left">Текст публикации</h3>
+                <div class="panel-heading pull-right">
+                  <div class="inline-block">
+                    <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Add article">
+                      <i class="fa fa-plus"></i><span>Добавить главу</span>
+                    </button>
+                    <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="camera">
+                      <i class="fa fa-camera"></i>
+                    </button>
+                    <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="music">
+                      <i class="fa fa-music"></i>
+                    </button>
+                    <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="film">
+                      <i class="fa fa-film" aria-hidden="true"></i>
+                    </button>
+                    <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Bold">
+                      <i class="fa fa-bold"></i>
+                    </button>
+                    <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Italic">
+                      <i class="fa fa-italic"></i>
+                    </button>
+                    <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Underline">
+                      <i class="fa fa-underline"></i>
+                    </button>
+                    <!--<button type="button" class="btn btn-default" data-toggle="tooltip" title="Strikethrough">
+                      <i class="fa fa-strikethrough"></i>
+                    </button>-->
+                    <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Bulleted list">
+                      <i class="fa fa-list-ul"></i>
+                    </button>
+                    <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Link">
+                      <i class="fa fa-link"></i>
+                    </button>
+                    <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Unlink">
+                      <i class="fa fa-unlink"></i>
+                    </button>
+                  </div>
+                  <!--<div class="btn-group">
+                    <button type="button" class="btn btn-default" data-toggle="tooltip" title="Undo">
+                      <i class="fa fa-reply"></i>
+                    </button>
+                    <button type="button" class="btn btn-default" data-toggle="tooltip" title="Redo">
+                      <i class="fa fa-share"></i>
+                    </button>
+                  </div>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-default" data-toggle="tooltip" title="Numbered list">
+                      <i class="fa fa-list-ol"></i>
+                    </button>
+                    <button type="button" class="btn btn-default" data-toggle="tooltip" title="Bulleted list">
+                      <i class="fa fa-list-ul"></i>
+                    </button>
+                  </div>-->
+                </div>
+                <div class="panel-body">
+                  <textarea>Lorem ipsum dolor sit amet</textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="form-group ">
+                <input id='check-1' type="checkbox" name='check-1' checked='checked' />
+                <label for="check-1">Показывать в ленте команды</label>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group ">
+
+                <input id='check-2' type="checkbox" name='check-1' />
+                <label for="check-2">Показывать в вашей ленте</label>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="mt-1">Теги</h3>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="form-group">
+                <div class="tagsinput">
+                  <span class="tag label label-info">Sydney<span data-role="remove"></span></span>
+                  <span class="tag label label-info">Beijing<span data-role="remove"></span></span>
+                  <span class="tag label label-info">Cairo<span data-role="remove"></span></span>
+                  <input type="text" placeholder="" size="1"></div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <p class="preview-news caption caption-gray text-xs-center">После добавления публикации она появится в ленте новостей.</p>
+            </div>
+          </div>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <div class="container-fulid">
+          <div class="row-flex">
+            <div class="col">
+              <button type="button" class="btn btn-secondary">УДАЛИТЬ</button>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-secondary">СОХРАНИТЬ</button>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-transparent">ПРЕДПРОСМОТР</button>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-primary">ОПУБЛИКОВАТЬ</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End news-create component- -->
+  </div>
+</div>

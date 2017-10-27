@@ -1,0 +1,654 @@
+<html>
+<head>
+  <title>GCL</title>
+  <meta charset="UTF-8">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css"
+        crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.4.0/css/froala_editor.css"
+        crossorigin="anonymous">
+  <!--<link type="text/css" href="//www.tinymce.com/css/codepen.min.css" rel="stylesheet">-->
+  <link type="text/css" href="../../../dist/public/css/main.css" rel="stylesheet">
+
+</head>
+<body>
+<!--template start-->
+
+
+<nav class="navbar navbar-fixed-top navbar-dark bg-inverse container-fluid nopadding">
+  <div class="container-fluid top-line-images">
+    <div class="container">
+      <div class="col-md-12 text-xl-center">
+        <div class="logos-l">
+          <ul>
+            <li class="team-logo-name1"></li>
+            <li class="team-logo-name2"></li>
+            <li class="team-logo-name3"></li>
+            <li class="team-logo-name1"></li>
+            <li class="team-logo-name2"></li>
+            <li class="team-logo-name3"></li>
+          </ul>
+        </div>
+        <div class="logos-r">
+          <ul>
+            <li class="team-logo-name1"></li>
+            <li class="team-logo-name2"></li>
+            <li class="team-logo-name3"></li>
+            <li class="team-logo-name1"></li>
+            <li class="team-logo-name2"></li>
+            <li class="team-logo-name3"></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-5">
+        <div class="input-group">
+          <div class="input-group-btn">
+            <div class="dropdown-toggle-box separator">
+              <button class="btn btn-transparent dropdown-toggle base strong text-uppercase " type="button" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false">
+                Dota 2
+              </button>
+            </div>
+            <div class="dropdown d-inline-block align-middle">
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">CS:GO</a>
+                <a class="dropdown-item" href="#">Dota</a>
+              </div>
+            </div>
+          </div>
+          <button id="search-button" class="button button-search"></button>
+          <!--show on click "#search-button"-->
+          <form action="#" class="bd-search hidden-sm-down" style="display: none">
+            <input class="form-control" id="top-search" name="top-search" placeholder="Search for something..." type="text">
+          </form>
+        </div>
+      </div>
+      <div class="col-sm-2 text-xs-center nopadding">
+        <span class="navbar-brand" (click)="navigateToHome()">CYBER <span></span> GATES</span>
+        <div class="brand-bg"></div>
+      </div>
+      <div class="col-sm-5 text-xs-right">
+        <ul class="nav navbar-nav pull-right mr-2">
+          <!--<li class="nav-item">
+            <div class="btn-group">
+              <button class="btn btn-transparent" [class.btn-warning]="lS.localizationPreference === Localization.English" type="button"
+                (click)="setLanguage(Localization.English)">
+                EN
+                </button>
+                <button class="btn btn-transparent" [class.active]="lS.localizationPreference === Localization.Russian" type="button" (click)="setLanguage(Localization.Russian)">
+                RU
+              </button>
+                <button *ngIf="!authService.isAuth" class="btn btn-transparent" type="button" (click)="showRegistrationModal()">
+                registration
+              </button>
+                <button *ngIf="!authService.isAuth" class="btn btn-transparent" type="button" (click)="showLoginModal()">
+                login
+              </button>
+                <div class="btn-group" role="group" *ngIf="authService.isAuth">
+                  <div class="dropdown" [class.open]="userInformationService.dropDown">
+                    <button *ngIf="authService.isAuth" class="btn btn-secondary dropdown-toggle" (click)="toggleDropDown()">
+                    name
+                  </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <a class="dropdown-item btn" (click)="navigateToSettings()">settings </a>
+                      <a class="dropdown-item btn" (click)="navigateToProfile()"> Profile </a>
+                      <button class="dropdown-item btn" (click)="logOut()">exit</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </li>-->
+          <li class="nav-item">
+            <div class="separator separator-noright pull-left">
+              <button class="button button-dollar"></button>
+            </div>
+            <div class="separator separator-noright pull-left">
+              <button class="button button-bell" (click)="navigateToNotifications()"></button>
+            </div>
+            <div class="dropdown-toggle-box user separator">
+              <button class="btn btn-transparent dropdown-toggle base strong text-uppercase " type="button" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false">
+                Dota 2
+              </button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="wrapper container toggled">
+  <!--sidebar-->
+  <div class="sidebar-wrapper">
+    <ul class="sidebar-nav" style="margin-left:0;">
+      <!--here can be "Open/Close" button-->
+      <!--<li class="sidebar-brand">
+        <a href="#menu-toggle" id="menu-toggle"> Toggle </a>
+      </li>-->
+      <!--"Open/Close" button-->
+      <li>
+        <a (click)="navigateToProfile()"><i class="icon icon-profile " aria-hidden="true"> </i> <span style="margin-left:10px;">Section</span> </a>
+      </li>
+      <li>
+        <div class="label label-msg-count">22</div>
+        <a href="#"> <i class="icon icon-news" aria-hidden="true"></i><span style="margin-left:10px;"> Section</span></a>
+      </li>
+      <li>
+        <a href="#"> <i class="icon icon-messages" aria-hidden="true"> </i> <span style="margin-left:10px;"> Section</span> </a>
+      </li>
+      <li>
+        <a href="#"> <i class="icon icon-awards" aria-hidden="true"> </i> <span style="margin-left:10px;"> Section</span> </a>
+      </li>
+      <li>
+        <a href="#"><i class="icon icon-market" aria-hidden="true"> </i> <span style="margin-left:10px;">Section </span> </a>
+      </li>
+      <li>
+        <a href="#"> <i class="icon icon-stats" aria-hidden="true"> </i> <span style="margin-left:10px;"> Section</span> </a>
+      </li>
+      <li>
+        <a href="#"> <i class="icon icon-help" aria-hidden="true"> </i> <span style="margin-left:10px;"> Section</span> </a>
+      </li>
+      <li>
+        <a href="#"> <i class="icon icon-star" aria-hidden="true"> </i> <span style="margin-left:10px;"> Section</span> </a>
+      </li>
+    </ul>
+  </div>
+  <!--sidebar end-->
+
+  <div class="row row-offcanvas row-offcanvas-left">
+    <!--<div class="col-md-12">
+
+      &lt;!&ndash;component user-profile (styles user-profile.scss)&ndash;&gt;
+      &lt;!&ndash; TODO: This info needs component &ndash;&gt;
+      <div class="user-profile row">
+        <div class="col-md-5 profile-box">
+          <div class="panel-heading resume-heading">
+            <div class="row">
+              <div class="col-lg-12">
+                <h1>{{ userInformationService.userInformation?.name }}</h1>
+                <div class="col-xs-12 col-sm-4">
+                  <figure>
+                    <img class="img-responsive" alt="" [src]="userInformationService.showUserProfileAvatar()">
+                  </figure>
+                  <div class="progress-box">
+                    <p>До следующего уровня:</p>
+                    <div class="progress">
+
+                      <p></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-8">
+                  <table class="table table-user-information">
+                    <thead>
+                      <tr>
+                        <td>Уровень:</td>
+                        <td>5</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Лига:</td>
+                        <td>2018</td>
+                      </tr>
+                      <tr>
+                        <td>Рейтинг:</td>
+                        <td>01/24/1988</td>
+                      </tr>
+                      <tr>
+                        <td>Репутация:</td>
+                        <td>Female</td>
+                      </tr>
+                      <tr>
+                        <td>Команда:</td>
+                        <td>Kathmandu,Nepal</td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                  <div class="social-btns">
+
+                    <div class="social-btn-holder">
+                      <a href="#" class="btn btn-social btn-facebook">
+                        <i class="fa fa-facebook">fb</i> </a>
+                    </div>
+
+                    <div class="social-btn-holder">
+                      <a href="#" class="btn btn-social btn-twitter">
+                        <i class="fa fa-twitter">tw</i> </a>
+                    </div>
+
+                    <div class="social-btn-holder">
+                      <a href="#" class="btn btn-social btn-linkedin">
+                        <i class="fa fa-youtube">ll</i> </a>
+                    </div>
+
+                    <div class="social-btn-holder">
+                      <a href="#" class="btn btn-social btn-google">
+                        <i class="fa fa-google">go</i></a>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="col-xs-12">
+                  <div class="tags">
+                    <span class="label label-info">Carry</span>
+                    <span class="label label-info">Solo Mid</span>
+                    <span class="label label-info">Scout</span>
+                    <span class="label label-info">Ukraine</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-7 profile-banner">
+          <p class="profile-info">Друзья, мы уехали на TI7! Пожелайте удачи :) Трансляция наших матчей на <a href="#">Твитче</a></p>
+          <p class="profile-sign">DreamTeam - Dream Big!!!</p>
+          <button class="btn btn-blue" type="button"></button>
+        </div>
+        <div class="col-md-12 navbar-main-wrapper">
+          <ul class="navbar-nav navbar-main-user navbar-center">
+            <li class="nav-item active">
+              <a class="nav-link" (click)="navigateToProfile()">
+                  МОЙ ПРОФИЛЬ <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">МОИ ДРУЗЬЯ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#">МОЯ КОМАНДА</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#">МОИ ДОСТИЖЕНИЯ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#">СПОНСОРЫ</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      &lt;!&ndash;component user-profile END&ndash;&gt;
+
+    </div>
+    <div class="clearfix visible-xs-block"></div>-->
+
+
+    <!--leagues-landing-header -->
+    <!--<div class="leagues-header">
+      <div class="row m-0 pb-2">
+        <div class="col-md-8">
+          <h1>Турнир Базовой ЛИги</h1>
+          <div class="media mb-1">
+            <img class="award-price d-flex mr-1" src="https://api.randomuser.me/portraits/women/2.jpg" alt="Generic placeholder image">
+            <div class="media-body text-xs-left">
+              <div class="mt-0">
+                <h2>Dota 2 GoodGame Cup 1x1 </h2>
+                <table class="table table-user-information">
+                  <tbody>
+                  <tr>
+                    <td>Лига:</td>
+                    <td>2018</td>
+                  </tr>
+                  <tr>
+                    <td>Рейтинг:</td>
+                    <td>01/24/1988</td>
+                  </tr>
+                  <tr>
+                    <td>Репутация:</td>
+                    <td>Female</td>
+                  </tr>
+                  <tr>
+                    <td>Команда:</td>
+                    <td>Kathmandu,Nepal</td>
+                  </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-md-4">
+          <button class="btn btn-primary btn-md pull-right ml-1"><i class="icon icon-calendar"></i><span>Отслеживаeтся</span></button>
+        </div>
+      </div>
+    </div>-->
+    <!--leagues-landing-header-->
+
+    <!--leagues-landing-header-match-forecast -->
+    <div class="leagues-header">
+      <div class="row m-0">
+        <div class="col-md-12">
+          <h1>Турнир Базовой ЛИги</h1>
+          <button class="watched btn btn-primary btn-md"><i class="icon icon-calendar"></i><span>Отслеживаeтся</span></button>
+          <!--<div class="media mb-1">
+            <img class="award-price d-flex mr-1" src="https://api.randomuser.me/portraits/women/2.jpg" alt="Generic placeholder image">
+            <div class="media-body text-xs-left">
+              <div class="mt-0">
+                <h2>Dota 2 GoodGame Cup 1x1 </h2>
+                <table class="table table-user-information">
+                  <tbody>
+                  <tr>
+                    <td>Лига:</td>
+                    <td>2018</td>
+                  </tr>
+                  <tr>
+                    <td>Рейтинг:</td>
+                    <td>01/24/1988</td>
+                  </tr>
+                  <tr>
+                    <td>Репутация:</td>
+                    <td>Female</td>
+                  </tr>
+                  <tr>
+                    <td>Команда:</td>
+                    <td>Kathmandu,Nepal</td>
+                  </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>-->
+          <div class="match-forecast">
+            <div class="col-md-12">
+              <button class="btn btn-primary btn-sm d-block mb-1">
+                <i class="icon icon-arrow-left-black-sm"></i>
+                <span>Все матчи</span></button>
+              <div class="">
+                <div class="team">
+                  <img class="d-flex" src="https://api.randomuser.me/portraits/women/2.jpg" alt="Generic placeholder image">
+                  <p class="caption">Name</p>
+                  <i class="flag flag-ua"></i>
+                </div>
+                <span class="team">- : -</span>
+                <div class="team">
+                  <img class="d-flex " src="https://api.randomuser.me/portraits/women/2.jpg" alt="Generic placeholder image">
+                  <p class="caption">Name</p>
+                  <i class="flag flag-ua"></i>
+                </div>
+              </div>
+              <div class="pull-left ml-1">
+                <table class="table table-match-forecast">
+                  <thead>
+                  <tr>
+                    <td>Карта (сервер):</td>
+                    <td>Время Матча:</td>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>Восточная Европа</td>
+                    <td>08.10.2016 13:16</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!--countdown -->
+              <div class="leagues-countdown">
+                <div class="events-count-down hide-month">
+                  <span class="events-count-down__month">00</span>
+                  <span class="events-count-down__day">12</span>
+                  <span class="events-count-down__hour">00</span>
+                  <span class="events-count-down__minute">00</span>
+                  <span class="events-count-down__second">00</span>
+                </div>
+              </div>
+              <!--countdown END-->
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!--leagues-landing-header-match-forecast END-->
+
+
+    <!--component pages-navigation-->
+    <div class="col-md-12 pages-navigation">
+      <ul class="nav nav-tabs justify-content-center mt-2">
+        <li class="nav-item active">
+          <a class="nav-link" (click)="navigateToHome()">ЛЕНТА</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">ОБ игроке</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">СТАТИСТИКА</a>
+        </li>
+      </ul>
+    </div>
+    <div class="clearfix"></div>
+    <!--component pages-navigation END-->
+
+    <div class="container bg-gray pt-2">
+
+      <div class="col-md-12">
+
+        <!--cabinet-create-team-->
+        <div class="cabinet-create-team">
+          <div class="row">
+            <div class="col-md-12">
+              <h1 class="mb-2">Создать КОМАНДУ</h1>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <h2 class="ml-0">1. ОСНОВНАЯ ИНФОРМАЦИЯ</h2>
+              <div class="wrapper-add-photo">
+                <h3>Логотип / Аватар:</h3>
+                <div class="add-photo text-center">
+                  <button class="btn btn-primary"><i class="fa fa-plus"></i><span>добавить лого</span></button>
+                </div>
+                <div class="text-center">
+                  <button class="btn btn-primary btn-sm mt-1">изменить лого</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <h2 class="text-muted">2. ЧЛЕНЫ КОМАНДЫ</h2>
+              <div class="wrapper-team-members">
+                <h3>Название Команды:</h3>
+                <input type="text">
+                <h3>Сокращенное Название:</h3>
+                <input type="text">
+                <h3>Сокращенное Название:</h3>
+                <textarea name="team-description" cols="30" rows="5"></textarea>
+                <h3>Цвета Команды:</h3>
+                <div class="wrapper-dropdown">
+                  <div class="dropdown dropdown-big">
+                    <button aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" id="dLabel" type="button">
+                      <div class="color-box bg-red"></div>
+                      <span class="caret"></span>
+                    </button>
+                    <ul aria-labelledby="dLabel" class="dropdown-menu">
+                      <li>item1</li>
+                      <li>item2</li>
+                      <li>item3</li>
+                    </ul>
+                  </div>
+                  <div class="dropdown dropdown-big">
+                    <button aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" id="dLabel" type="button">
+                      <div class="color-box bg-green"></div>
+                      <span class="caret"></span>
+                    </button>
+                    <ul aria-labelledby="dLabel" class="dropdown-menu">
+                      <li>item1</li>
+                      <li>item2</li>
+                      <li>item3</li>
+                    </ul>
+                  </div>
+                  <div class="dropdown dropdown-big">
+                    <button aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" id="dLabel" type="button">
+                      <div class="color-box bg-blue"></div>
+                      <span class="caret"></span>
+                    </button>
+                    <ul aria-labelledby="dLabel" class="dropdown-menu">
+                      <li>item1</li>
+                      <li>item2</li>
+                      <li>item3</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <h2 class="mr-0 text-muted">3. ПОДТВЕРЖДЕНИЕ</h2>
+              <div class="wrapper-confirmation">
+                <h3>Страна:</h3>
+                <div class="dropdown dropdown-big">
+                  <button aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" id="dLabel" type="button">
+                    Украина
+                    <span class="caret"></span>
+                  </button>
+                  <ul aria-labelledby="dLabel" class="dropdown-menu">
+                    <li>item1</li>
+                    <li>item2</li>
+                    <li>item3</li>
+                  </ul>
+                </div>
+                <h3>Профили в соц. сетях:</h3>
+                <input id="check-fb" type="checkbox">
+                <label for="check-fb" class="d-block"><i class="icon icon-fb"></i></label>
+                <button class="btn btn-secondary btn-sm mt-1"><i class="fa fa-plus"></i><span>Добавить еще</span></button>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="pull-right">
+                <button class="btn btn-secondary">ОТМЕНА</button>
+                <button class="btn btn-primary ml-1">ДАЛЕЕ</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--cabinet-create-team END-->
+
+        <!--cabinet-team-main-->
+        <div class="cabinet-team-main">
+          <div class="row">
+            <div class="col-md-8 mb-2">
+              <div class="media mb-1">
+                <img class="award-price d-flex mr-1" src="https://api.randomuser.me/portraits/women/2.jpg" alt="Generic placeholder image">
+                <div class="media-body text-xs-left">
+                  <div class="mt-0">
+                    <h1 class="blue">DreamTeam</h1>
+                    <table class="table table-user-information float-left">
+                      <tbody>
+                        <tr>
+                          <td>Лига:</td>
+                          <td>2018</td>
+                        </tr>
+                        <tr>
+                          <td>Рейтинг:</td>
+                          <td>01/24/1988</td>
+                        </tr>
+                        <tr>
+                          <td>Репутация:</td>
+                          <td>Female</td>
+                        </tr>
+                        <tr>
+                          <td>Страна:</td>
+                          <td><div class="flag flag-ru"></div></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div class="float-left mt-3">
+                      <p class="puny mb-0">Последние 50 матчей:</p>
+                      <p><b class="green">32</b><b class="red"> - 18</b></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrapper-previous-matches">
+                <div class="btn"><i class="icon icon-arrow-down"></i><span>Предыдущие команды:</span></div>
+                <table class="table table-previous-matches">
+                  <tbody>
+                  <tr>
+                    <td rowspan="2"><img class="d-flex" src="https://api.randomuser.me/portraits/women/2.jpg" alt="Generic placeholder image"></td>
+                    <td>12 июл, 2016 - 24 авг, 2016</td>
+                    <td>Лига:</td>
+                    <td>Рейтинг:</td>
+                    <td>Страна:</td>
+                    <td>Последние 50 матчей:</td>
+                  </tr>
+                  <tr>
+                    <td class="base blue">Alliance</td>
+                    <td>Базовая</td>
+                    <td>1016</td>
+                    <td><div class="flag flag-ru"></div></td>
+                    <td><b class="green">32</b><b class="red"> - 18</b></td>
+                  </tr>
+                  <tr>
+                    <td rowspan="2"><img class="d-flex" src="https://api.randomuser.me/portraits/women/2.jpg" alt="Generic placeholder image"></td>
+                    <td>5 апр, 2016 - 12 июл, 2016</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td class="base blue">Alliance</td>
+                    <td>Базовая</td>
+                    <td>1016</td>
+                    <td><div class="flag flag-ru"></div></td>
+                    <td><b class="green">32</b><b class="red"> - 18</b></td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="sponsors-box">
+                <h2>СПОНСОРЫ КОМАНДЫ</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--cabinet-team-main END-->
+      </div>
+
+        <pages></pages>
+
+
+  </div>
+</div>
+<!--/row-->
+
+</div>
+<!-- /container -->
+
+
+<footer class="footer">
+  <div class="container-fluid">
+    <span class="text-muted">Все права защищены</span>
+  </div>
+</footer>
+<!--<background-panel></background-panel>-->
+
+<modal-adapter></modal-adapter>
+
+
+
+<!--template start END-->
+<script
+        src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+
+<!--<script type="text/javascript" src="./static/js/moment-with-locales.js"></script>
+<script type="text/javascript" src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+<script type="text/javascript" src="./static/js/polyfills.js"></script>
+<script type="text/javascript" src="./static/js/application.js"></script>-->
+</body>
+</html>

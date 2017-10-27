@@ -1,0 +1,42 @@
+/*
+table styles is in : table-common.scss
+*/
+.my-sponsors {
+  table {
+    //table-layout: fixed;
+    thead {
+      tr > th {
+        &:first-child {font-size: $size-body;}
+        .btn {
+          padding: 0;
+          background: none;
+          i {
+            color: $cornflower;
+            font-size: $size-h1;
+            &:hover {
+              color: $cornflower-70;
+            }
+          }
+        }
+      }
+    }
+    tbody td {
+      p{
+        span {
+          font-size: $size-base;
+        }
+      }
+    }
+
+  }
+  .become-sponsor {
+    background-color: $shark;
+    text-align: center;
+    padding: 1.5rem;
+    p {
+      &:not(:first-child){
+        padding: 1.25rem 0;
+      }
+    }
+  }
+}

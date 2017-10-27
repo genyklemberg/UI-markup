@@ -1,0 +1,125 @@
+$flag-width: 16px;
+.leagues-tournament-matches {
+  padding: 1rem 1rem 0rem;
+  margin-bottom: 1rem;
+  background-color: $shark;
+  min-height: 410px;
+
+  table {
+    &.table-striped {
+      tbody tr:nth-of-type(odd) {
+        background-color: $mako;
+      }
+      .team-logo {
+        width: 40px;
+        height: 30px;
+        background-color: #667380;
+      }
+      .arrow-down {
+        display: inline-block;
+        border: 0;
+        height: 8px;
+        width: 14px;
+        background-image: url($assetPath + "img/icons/chevron-down-copy.svg");
+      }
+      .flag {
+        width: $flag-width;
+        height: 11px;
+        background-image: url($assetPath + "img/flags/16/Afghanistan.png");
+      }
+    }
+    thead th {
+      border: 0;
+      padding-top: 0;
+      padding-bottom: 0.5rem;
+      text-align: center;
+      font-size: $size-table;
+      font-family: $font-info;
+      font-weight: normal;
+      color: $iron;
+      &:first-child {
+        font-size: $size-body;
+        text-align: left;
+        color: $white;
+      }
+    }
+    tbody {
+      tr {
+        background-color: $shuttleGray-dark;
+        td,
+        th {
+          padding: 0.3125rem;
+          color: $white;
+          font-family: $font-h4;
+          line-height: $line-height-h4;
+          border-top: 0;
+          text-align: center;
+          vertical-align: middle;
+          &:first-child {
+            border-right: 2px solid $shark;
+            &:after {
+              content:"";
+              margin: 8px auto 0;
+              width: 14px;
+              height: 14px;
+              display: block;
+              background-image: url($assetPath + "img/icons/info-icon.svg");
+            }
+          }
+
+          .first-team ,
+          .second-team {
+            display: inline-block;
+            font-family: $font-info;
+            .flag {
+              position: relative;
+              top: 10px;
+            }
+            span {
+              color: $cornflower;
+              vertical-align: top;
+              max-width: 80px;
+              word-break: break-all;
+              display: inline-block;
+            }
+          }
+          .first-team {
+            .flag {
+              right: $flag-width + 4;
+            }
+            span {
+              margin-left:-6px;
+              margin-right: 20px;
+              display: inline-block;
+            }
+          }
+          .second-team {
+            .flag {
+              left: $flag-width - 6;
+            }
+            span { margin-left: 10px; display: inline-block; }
+          }
+          .score {
+            line-height: $size-h1;
+            font-size: $size-base;
+            margin: 0 $base-margin;
+          }
+          .orange {color: $butterCup;}
+        }
+        th {
+          color: $iron;
+          &:first-child {
+            color: $white;
+            font-size: $size-body;
+            border-left: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .pagination {
+    display: block;
+  }
+
+  }

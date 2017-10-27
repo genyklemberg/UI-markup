@@ -1,0 +1,239 @@
+.wrapper {
+  padding-left: 0;
+  -webkit-transition: all 0.6s ease;
+  -moz-transition: all 0.6s ease;
+  -o-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+}
+
+.wrapper.toggled {
+  padding-left: 200px;
+  .sidebar-wrapper {
+    width: 0;
+    .sidebar-nav li{
+      .icon {
+        margin: 0 auto;
+        display: block;
+      }
+    }
+  }
+  .row-offcanvas {
+    //position: absolute;
+    //margin-left:-250px;
+  }
+}
+
+@media(min-width:768px) {
+  .wrapper {
+    padding-left: 100px;
+
+    &.toggled {
+      padding-left: 0;
+      .sidebar-wrapper {
+        width: 40px;
+        .sidebar-nav {
+          width: 40px;
+          //right: 0px;
+          span {
+            display: none;
+          }
+        }
+      }
+      .row-offcanvas {
+        position: relative;
+        margin-right: 0;
+      }
+    }
+  }
+
+  .sidebar-wrapper {
+    width: 200px;
+  }
+
+  .row-offcanvas {
+    //padding: 20px;
+    position: relative;
+  }
+}
+
+/*
+@media(max-width:414px) {
+
+  .wrapper.toggled .row-offcanvas {
+    position: absolute;
+    margin-right:60px;
+  }
+
+  .wrapper.toggled {
+    padding-right: 60px;
+  }
+
+  .wrapper {
+    padding-left: 20px;
+  }
+
+  .wrapper.toggled {
+    padding-left: 0;
+  }
+
+  .sidebar-wrapper {
+    width: 50px;
+  }
+
+  .wrapper.toggled #sidebar-wrapper {
+    width: 140px;
+
+
+  }
+
+  .wrapper.toggled span {
+    visibility:visible;
+    position:relative;
+    left:70px;
+    bottom:13px;
+
+  }
+
+  .wrapper span {
+    visibility:hidden;
+
+  }
+  .wrapper.toggled   i {
+    float:right;
+  }
+
+  .wrapper i {
+    float:right;
+  }
+
+  .row-offcanvas {
+    padding: 5px;
+    position: relative;
+  }
+
+  .wrapper.toggled .row-offcanvas {
+    position: relative;
+    margin-right: 0;
+  }
+}
+*/
+
+.sidebar-wrapper {
+  z-index: 1000;
+  position: fixed;
+  left: 140px;
+
+  width: 140px;
+  height: 100%;
+  margin-left: -140px;
+  background-color:$paleSky;
+
+  /*-webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;*/
+
+
+  .row-offcanvas {
+    width: 100%;
+    position: absolute;
+    padding: 10px;
+  }
+
+  /* Sidebar Styles */
+
+  .sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 140px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+      text-indent: 10px;
+      padding-top: 12px;
+      &:hover {
+        .icon {
+          //box-shadow: 0 0 5px $cornflower;
+        }
+        a {
+          text-shadow: $text-shadow;
+        }
+      }
+      a {
+        display: block;
+        text-decoration: none;
+        color: $white;
+        height: 20px;
+        &:hover,
+        &:active,
+        &:focus {
+          text-decoration: none;
+        }
+      }
+      span {
+        vertical-align: text-bottom;
+      }
+      .icon {
+        width: 25px;
+        height: 25px;
+        display: inline-block;
+        background-repeat: no-repeat;
+        &:hover {
+          background-position-y: -25px;
+        }
+        &-profile {
+          background-image: url($assetPath + "img/icons/sidebar/profile.svg");
+        }
+        &-news {
+          background-image: url($assetPath + "img/icons/sidebar/news.svg");
+        }
+        &-messages {
+          background-image: url($assetPath + "img/icons/sidebar/mesages.svg");
+        }
+        &-awards {
+          background-image: url($assetPath + "img/icons/sidebar/achievments.svg");
+          &:hover {
+            background-position-y: -25px;
+          }
+        }
+        &-market {
+          background-image: url($assetPath + "img/icons/sidebar/market.svg");
+        }
+        &-stats {
+          background-image: url($assetPath + "img/icons/sidebar/stats.svg");
+        }
+        &-help {
+          background-image: url($assetPath + "img/icons/sidebar/help.svg");
+        }
+        &-star {
+          background-image: url($assetPath + "img/icons/sidebar/favorites.svg");
+        }
+      }
+      .label-msg-count {
+        background-color: $atlantis;
+        text-indent: 0;
+        float: right;
+        margin-right: -15px;
+        margin-top: 2px;
+      }
+      &:after {
+        margin-top: 10px;
+        content: "";
+        height: 2px;
+        display: block;
+        background-image: url($assetPath + "img/icons/nav-line-separator-horisontal.png");
+      }
+    }
+    .sidebar-brand {
+      a {
+        color: #999999;
+        &:hover {
+          color: #fff;
+          background: none;
+        }
+      }
+    }
+  }
+
+}

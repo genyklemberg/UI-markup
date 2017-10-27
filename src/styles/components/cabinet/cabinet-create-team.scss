@@ -1,0 +1,83 @@
+.cabinet-create-team {
+  padding: 1rem 1rem 3rem;
+  margin-bottom: 1rem;
+  background-color: $shark;
+  min-height: 410px;
+
+  h2,
+  .border-b {
+    border-bottom: 1px solid $shuttleGray-dark;
+    margin-right: -1rem;
+    margin-left: -1rem;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    padding-bottom: $base-margin/2;
+  }
+  h3 {
+    margin-top: 2rem;
+  }
+  .wrapper-confirmation .dropdown button,
+  textarea,
+  input {
+    width: 100%;
+  }
+  textarea {
+    background-color: $shuttleGray-light;
+    border: 0;
+    padding: $base-margin/2;
+  }
+  .wrapper-add-photo {
+    .add-photo {
+      padding-top: 60px;
+      background-color: #667380;
+      height: 160px;
+      width: 220px;
+      margin: 0 auto;
+    }
+  }
+  .wrapper-team-members .dropdown,
+  .wrapper-confirmation .dropdown {
+    button {
+      text-align: left;
+      .caret {
+        float: right;
+        margin-top: 6px;
+        margin-left: 6px;
+      }
+    }
+  }
+  .wrapper-dropdown .dropdown {
+    margin-right: 10%;
+    float: left;
+    button {
+      .color-box {
+        float: left;
+        width: 17px;
+        height: 17px;
+        border: 1px solid $mako;
+        &.bg-red {
+          background-color: $flushMahogany;
+        }
+        &.bg-green {
+          background-color: $atlantis;
+        }
+        &.bg-blue {
+          background-color: $cornflower;
+        }
+      }
+    }
+  }
+
+  .icon-fb {
+    &:before {
+      height: 21px;
+      width: 23px;
+      background-size: cover;
+      background-position-y: -5px;
+    }
+    &:hover:before {
+      background-position-y: 59px;
+    }
+  }
+
+}

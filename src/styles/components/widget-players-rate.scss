@@ -1,0 +1,56 @@
+.widget-players-rate {
+  .img-thumbnail {
+    padding: 0;
+    border-color: #667380;
+    width: 30px;
+  }
+  .list-group-item {
+    display: table;
+
+    [class*="col-"]{
+      float: none;
+      display: table-cell;
+      vertical-align: middle;
+    }
+    &[class*="col-"]{
+      float: none;
+      display: table-cell;
+      background-color: rebeccapurple;
+    }
+
+    .index {
+      font-size: $size-h2;
+    }
+
+    .rate {
+      font-size: $size-h1;
+    }
+
+  }
+
+  .list-group-item.user-rate-state {
+    border-top: 1px solid #525c66;
+    padding-top: $base-margin*2.5;
+    h5 {
+      position: absolute;
+      top: -18px;
+      margin-left: 6px;
+      font-size: $size-links-small;
+    }
+  }
+
+  .widget-footer {
+    .icon-info {
+      width: 16px;
+      height: 16px;
+      display: block;
+      float: left;
+      margin: 2px 10px;
+      background-size: cover;
+      background: url($assetPath + "img/icons/info-icon.svg") center center no-repeat;
+    }
+    .see-all {
+      font-size: $size-info;
+    }
+  }
+}

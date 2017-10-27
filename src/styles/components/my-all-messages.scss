@@ -1,0 +1,77 @@
+/*
+table styles is in : table-common.scss
+*/
+.my-all-messages-header{
+  min-height: 134px;
+  padding-top: 1rem;
+  padding-bottom: 64px;
+  margin: 0 0 -4rem 0;
+  background-color: rgba(120,120,120,0.25);
+}
+.my-all-messages {
+  margin-bottom: 1rem;
+
+  .table-box-content {
+    padding: 1rem;
+    background-color: $shark;
+  }
+  .mw-180{
+    min-width: 180px;
+  }
+  table.table-main {
+    //table-layout: fixed;
+
+    img.img-sm {
+      width: 30px;
+      height: 30px;
+      margin: 0 0.5rem;
+    }
+    thead {
+      .btn-group-cutom {
+        div {
+          min-width: 20px;
+          min-height: 20px;
+          margin-right: 10px;
+          i{
+            font-size: 1rem;
+            color: $cornflower;
+            line-height: 1.25rem;  //20px
+            cursor: pointer;
+            &:hover {
+              color: $white;
+            }
+          }
+          &:not(:first-child){
+            float: left;
+          }
+        }
+      }
+      .btn-sm {
+        background-color: $atlantis;
+        color: $white;
+        i {margin-right: 5px;}
+      }
+      .wrapper-dropdown {
+        p {
+          line-height: 24px;
+          margin: 0 1rem;
+          color: $iron;
+          font-size: $size-info;//12px
+          font-family: $font-info;
+        }
+      }
+    }
+    tbody {
+      tr:hover {
+        background-color: $shuttleGray-dark;
+      }
+      td {
+        &:last-child,
+        &:first-child {
+          max-width: 50px;
+        }
+      }
+    }
+  }
+
+}

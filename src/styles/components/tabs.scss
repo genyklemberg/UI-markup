@@ -1,0 +1,115 @@
+/*general*/
+$tabSkew :20deg;
+
+.nav-tabs {
+  border: 0;
+  &.mt-2 {margin-top: $base-margin*2};
+  .nav-item {
+    margin: 0 12px;
+    height: auto;
+    background-color: transparent;
+    display: inline-block;
+    +.nav-item {
+      margin: 0 12px;
+    }
+    &:last-child {
+      a.nav-link:after {
+        @include transform(skew($tabSkew));
+      }
+    }
+  }
+  a.nav-link {
+    border-radius: 0;
+    background-color: $shuttleGray-dark;
+    padding: 6px 1em;
+    float: left;
+    text-decoration: none;
+    position: relative;
+    text-transform: uppercase;
+    font-size: $size-button;
+    font-family: $font-h3;
+    font-weight: normal;
+    color: $white;
+    border: 0;
+    line-height: 28px;
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: -8px;
+      width: 16px;
+      background: $shuttleGray-dark;
+      @include transform(skew(-$tabSkew));
+    }
+    &:before {
+      left: -8px;
+      border-radius: 0;
+    }
+    &:hover {
+      text-shadow: -2px 1px 7px #00B3F0;
+      background-color: $mako;
+      color: $white;
+      &:before,
+      &:after {
+        background: $mako;
+      }
+    }
+    &.active {
+      border: 0;
+      background-color: $mako;
+      color: $white;
+      &:before,
+      &:after {
+        background: $mako;
+      }
+      &:hover {
+        text-shadow: -2px 1px 7px #00B3F0;
+        background-color: $mako;
+        color: $white;
+      }
+    }
+  }
+}
+
+
+/* small widget-navigation tabs*/
+.widget-navigation {
+  .nav-tabs {
+    .nav-item {
+      height: auto;
+      //width: 114px;
+      margin: 0 12px;
+      +.nav-item {
+        margin: 0 12px;
+      }
+    }
+
+    a.nav-link {
+      text-transform: none;
+      color: $white-70;
+      padding: 0 6px;
+      text-align: center;
+      &:before,
+      &:after {
+        width: 12px;
+        background: $shuttleGray-dark;
+      }
+      &:hover {
+        text-shadow: -2px 1px 7px #00B3F0;
+        background-color: $shuttleGray-dark;
+        color: $white;
+      }
+
+      &.active {
+        background-color: $shark;
+        &:before,
+        &:after {
+          border: $shark;
+          background-color: $shark;
+        }
+      }
+    }
+  }
+}

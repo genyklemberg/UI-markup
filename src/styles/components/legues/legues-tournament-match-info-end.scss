@@ -1,0 +1,109 @@
+.legues-tournament-match-info-end {
+  padding: 1rem 1rem 3rem;
+  margin-bottom: 1rem;
+  background-color: $shark;
+  h4.pre-header {
+    font-family: $font-info;
+    color: $iron;
+  }
+  .selector {
+    position: absolute;
+    left: 1rem;
+  }
+  .score {
+    span {
+      margin: $base-margin/4;
+      font-size: $size-table;
+      b { font-size: $size-h1; }
+    }
+  }
+  .team-name {
+    color: $cornflower;
+    &:first-child:before {
+      content: "";
+      background-image: url($assetPath + "img/icons/sidebar/achievments.svg");
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      background-size: cover;
+      margin-right: 5px;
+    }
+    span {
+      margin-left: $base-margin;
+      font-size: $size-table;
+      font-family: $font-body;
+    }
+  }
+
+  $td-padding: 0.5rem;
+  table {
+    thead th {
+      border: 0;
+      font-size: $size-table;
+      font-family: $font-table;
+      font-weight: 400;
+      padding-top: 0;
+      padding-bottom: $td-padding;
+      text-align: center;
+      color: $iron;
+      &:first-child {
+        font-size: $size-body;
+        font-family: $font-bold;
+        text-align: left;
+      }
+    }
+    tbody {
+      tr {
+        background-color: $shuttleGray-dark;
+        td,
+        th {
+          line-height: $line-height-h4;
+          border-top: 0;
+          vertical-align: middle;
+          text-align: center;
+          font-weight: 400;
+          padding: $td-padding;
+          &.perks {
+            max-width: (33+2)*6px;
+            img{
+              margin-right: 2px;
+              margin-bottom: 2px;
+              float: left;
+              width: 33px;
+              height: 24px;
+              background-color: #667380;
+            }
+          }
+          &.hero-info {
+            .hero-info-container { position: relative; }
+            .hero-logo {
+              width: 55px;
+            }
+            .hero-lvl {
+              position: absolute;
+              padding: 0 2px;
+              top: 0;
+              left: 0;
+              @media screen and (min-width: 1200px) { //1200px related whith main .container
+                left: 10px;
+              }
+            }
+          }
+
+          .team-logo,
+          .hero-logo,
+          .perk-icon {
+            width: 30px;
+            height: 30px;
+            background-color: #667380;
+          }
+          .team-logo {
+            margin-left: -10px;
+            margin-right: $base-margin;
+          }
+        }
+      }
+    }
+  }
+
+  }

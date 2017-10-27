@@ -1,0 +1,116 @@
+<div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <!-- messages-chat component-->
+    <div class="modal-content messages-chat">
+      <div class="modal-header">
+        <button
+                class="close"
+                type="button"
+                aria-label="Close"
+                (click)="hideRegistrationModal()"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+
+        <div class="modal-title">
+          <h1>Переписка с <span class="blue">EG.ppd</span></h1>
+          <p class="user-info">
+            <img alt="flag" class="img-thumbnail" src="https://img.abiosgaming.com/flags/Malaysia.png">
+            <span class="caption caption-gray">Bradley Rodriquez</span></p>
+        </div>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="row">
+            <div class="col-md-12 mb-1">
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <div class="room-time puny gray-light text-xs-center">Вчера</div>
+                  <div class="media">
+                    <div class="media-left pr-1">
+                      <a class="link">
+                        <img alt="64x64" class="media-object img-thumbnail img-circle p-0"
+                             src="http://api.randomuser.me/portraits/men/49.jpg">
+                      </a>
+                    </div>
+                    <div class="media-body">
+                      <h3 class="media-heading blue">Media heading <span class="time caption caption-gray">11:41</span></h3>
+                      <p class="base">Cray paleo tattooed, Truffaut skateboard street art PBR jean shorts Shoreditch farm-to-table Austin lo-fi Odd Future occupy.</p>
+                    </div>
+                    <div class="media-right">
+                      <button type="button" class="btn btn-default btn-sm blue" data-toggle="tooltip" title="menu">
+                        <i class="fa fa-ellipsis-v"></i>
+                      </button>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="room-time puny text-xs-center">Сегодня</div>
+                  <div class="media">
+                    <div class="media-left pr-1">
+                      <a class="link">
+                        <img alt="64x64" class="media-object img-thumbnail img-circle rounded-circle"
+                             src="http://api.randomuser.me/portraits/men/48.jpg">
+                      </a>
+                    </div>
+                    <div class="media-body">
+                      <h3 class="media-heading blue">Patrick Smith <span class="time caption caption-gray">11:41</span></h3>
+                      <p class="base">Fixie tote bag ethnic keytar. Neutra vinyl American Apparel kale chips tofu art party, cardigan raw denim quinoa.</p>
+                      <p class="base">Neutra vinyl American Apparel kale chips tofu art party, cardigan raw denim quinoa.</p>
+                    </div>
+                    <div class="media-right">
+                      <button type="button" class="btn btn-default btn-sm blue" data-toggle="tooltip" title="menu">
+                        <i class="fa fa-ellipsis-v"></i>
+                      </button>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="media">
+                    <div class="media-left pr-1">
+                      <a class="link">
+                        <img alt="64x64" class="media-object img-thumbnail img-circle rounded-circle"
+                             src="http://api.randomuser.me/portraits/men/49.jpg">
+                      </a>
+                    </div>
+                    <div class="media-body">
+                      <h3 class="media-heading blue">Media heading <span class="time caption caption-gray">11:41</span></h3>
+                      <p class="base">Fixie tote bag ethnic keytar. Neutra vinyl American Apparel kale chips tofu art party, cardigan raw denim quinoa.</p>
+                    </div>
+                    <div class="media-right">
+                      <button type="button" class="btn btn-default btn-sm blue" data-toggle="tooltip" title="menu">
+                        <i class="fa fa-ellipsis-v"></i>
+                      </button>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-12">
+              <textarea rows="3">Ваше сообщение…</textarea>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <div class="container-fulid">
+          <div class="row">
+            <div class="col-md-12">
+              <button type="button" class="btn btn-transparent btn-sm blue" data-toggle="tooltip" title="camera">
+                <i class="fa fa-camera"></i>
+              </button>
+              <button type="button" class="btn btn-transparent btn-sm blue" data-toggle="tooltip" title="music">
+                <i class="fa fa-music"></i>
+              </button>
+              <button type="button" class="btn btn-transparent btn-sm blue" data-toggle="tooltip" title="film">
+                <i class="fa fa-film" aria-hidden="true"></i>
+              </button>
+              <button type="button" class="btn btn-secondary ml-1">Отправить</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End component- -->
+  </div>
+</div>

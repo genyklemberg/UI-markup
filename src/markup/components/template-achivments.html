@@ -1,0 +1,830 @@
+<html>
+<head>
+  <title>GCL</title>
+  <meta charset="UTF-8">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css"
+        crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.4.0/css/froala_editor.css"
+        crossorigin="anonymous">
+  <!--<link type="text/css" href="//www.tinymce.com/css/codepen.min.css" rel="stylesheet">-->
+  <link type="text/css" href="../../../dist/public/css/main.css" rel="stylesheet">
+
+</head>
+<body>
+<!--template start-->
+
+<nav class="navbar navbar-fixed-top navbar-dark bg-inverse container-fluid nopadding">
+  <div class="container-fluid top-line-images">
+    <div class="container">
+      <div class="col-md-12 text-xl-center">
+        <div class="logos-l">
+          <ul>
+            <li class="team-logo-name1"></li>
+            <li class="team-logo-name2"></li>
+            <li class="team-logo-name3"></li>
+            <li class="team-logo-name1"></li>
+            <li class="team-logo-name2"></li>
+            <li class="team-logo-name3"></li>
+          </ul>
+        </div>
+        <div class="logos-r">
+          <ul>
+            <li class="team-logo-name1"></li>
+            <li class="team-logo-name2"></li>
+            <li class="team-logo-name3"></li>
+            <li class="team-logo-name1"></li>
+            <li class="team-logo-name2"></li>
+            <li class="team-logo-name3"></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-5">
+        <div class="input-group">
+          <div class="input-group-btn">
+            <div class="dropdown-toggle-box separator">
+              <button class="btn btn-transparent dropdown-toggle base strong text-uppercase " type="button" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false">
+                Dota 2
+              </button>
+            </div>
+            <div class="dropdown d-inline-block align-middle">
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">CS:GO</a>
+                <a class="dropdown-item" href="#">Dota</a>
+              </div>
+            </div>
+          </div>
+          <button id="search-button" class="button button-search"></button>
+          <!--show on click "#search-button"-->
+          <form action="#" class="bd-search hidden-sm-down" style="display: none">
+            <input class="form-control" id="top-search" name="top-search" placeholder="Search for something..." type="text">
+          </form>
+        </div>
+      </div>
+      <div class="col-sm-2 text-xs-center nopadding">
+        <span class="navbar-brand" (click)="navigateToHome()">CYBER <span></span> GATES</span>
+        <div class="brand-bg"></div>
+      </div>
+      <div class="col-sm-5 text-xs-right">
+        <ul class="nav navbar-nav pull-right mr-2">
+          <!--<li class="nav-item">
+            <div class="btn-group">
+              <button class="btn btn-transparent" [class.btn-warning]="lS.localizationPreference === Localization.English" type="button"
+                (click)="setLanguage(Localization.English)">
+                EN
+                </button>
+                <button class="btn btn-transparent" [class.active]="lS.localizationPreference === Localization.Russian" type="button" (click)="setLanguage(Localization.Russian)">
+                RU
+              </button>
+                <button *ngIf="!authService.isAuth" class="btn btn-transparent" type="button" (click)="showRegistrationModal()">
+                registration
+              </button>
+                <button *ngIf="!authService.isAuth" class="btn btn-transparent" type="button" (click)="showLoginModal()">
+                login
+              </button>
+                <div class="btn-group" role="group" *ngIf="authService.isAuth">
+                  <div class="dropdown" [class.open]="userInformationService.dropDown">
+                    <button *ngIf="authService.isAuth" class="btn btn-secondary dropdown-toggle" (click)="toggleDropDown()">
+                    name
+                  </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <a class="dropdown-item btn" (click)="navigateToSettings()">settings </a>
+                      <a class="dropdown-item btn" (click)="navigateToProfile()"> Profile </a>
+                      <button class="dropdown-item btn" (click)="logOut()">exit</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </li>-->
+          <li class="nav-item">
+            <div class="separator separator-noright pull-left">
+              <button class="button button-dollar"></button>
+            </div>
+            <div class="separator separator-noright pull-left">
+              <button class="button button-bell" (click)="navigateToNotifications()"></button>
+            </div>
+            <div class="dropdown-toggle-box user separator">
+              <button class="btn btn-transparent dropdown-toggle base strong text-uppercase " type="button" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false">
+                Dota 2
+              </button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="wrapper container toggled">
+  <!--sidebar-->
+  <div class="sidebar-wrapper">
+    <ul class="sidebar-nav" style="margin-left:0;">
+      <!--here can be "Open/Close" button-->
+      <!--<li class="sidebar-brand">
+        <a href="#menu-toggle" id="menu-toggle"> Toggle </a>
+      </li>-->
+      <!--"Open/Close" button-->
+      <li>
+        <a (click)="navigateToProfile()"><i class="icon icon-profile " aria-hidden="true"> </i> <span style="margin-left:10px;">Section</span> </a>
+      </li>
+      <li>
+        <div class="label label-msg-count">22</div>
+        <a href="#"> <i class="icon icon-news" aria-hidden="true"></i><span style="margin-left:10px;"> Section</span></a>
+      </li>
+      <li>
+        <a href="#"> <i class="icon icon-messages" aria-hidden="true"> </i> <span style="margin-left:10px;"> Section</span> </a>
+      </li>
+      <li>
+        <a href="#"> <i class="icon icon-awards" aria-hidden="true"> </i> <span style="margin-left:10px;"> Section</span> </a>
+      </li>
+      <li>
+        <a href="#"><i class="icon icon-market" aria-hidden="true"> </i> <span style="margin-left:10px;">Section </span> </a>
+      </li>
+      <li>
+        <a href="#"> <i class="icon icon-stats" aria-hidden="true"> </i> <span style="margin-left:10px;"> Section</span> </a>
+      </li>
+      <li>
+        <a href="#"> <i class="icon icon-help" aria-hidden="true"> </i> <span style="margin-left:10px;"> Section</span> </a>
+      </li>
+      <li>
+        <a href="#"> <i class="icon icon-star" aria-hidden="true"> </i> <span style="margin-left:10px;"> Section</span> </a>
+      </li>
+    </ul>
+  </div>
+  <!--sidebar end-->
+
+  <div class="row row-offcanvas row-offcanvas-left">
+    <div class="col-md-12">
+
+      <!--component user-profile (styles user-profile.scss)-->
+      <!-- TODO: This info needs component -->
+      <div class="user-profile row">
+        <div class="col-md-5 profile-box">
+          <div class="panel-heading resume-heading">
+            <div class="row">
+              <div class="col-lg-12">
+                <h1>User name</h1>
+                <div class="col-xs-12 col-sm-4">
+                  <figure>
+                    <!--<img class="img-responsive" alt="" [src]="userInformationService.showUserProfileAvatar()">-->
+                    <img alt="" class="img-responsive" ng-reflect-src="http://placehold.it/120x120" src="http://placehold.it/120x120">
+                  </figure>
+                  <div class="progress-box">
+                    <p>До следующего уровня:</p>
+                    <div class="progress">
+
+                      <p></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-8">
+                  <table class="table table-user-information">
+                    <thead>
+                    <tr>
+                      <td>Уровень:</td>
+                      <td>5</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <td>Лига:</td>
+                      <td>2018</td>
+                    </tr>
+                    <tr>
+                      <td>Рейтинг:</td>
+                      <td>01/24/1988</td>
+                    </tr>
+                    <tr>
+                      <td>Репутация:</td>
+                      <td>Female</td>
+                    </tr>
+                    <tr>
+                      <td>Команда:</td>
+                      <td>Kathmandu,Nepal</td>
+                    </tr>
+
+                    </tbody>
+                  </table>
+                  <div class="social-btns">
+
+                    <div class="social-btn-holder">
+                      <a href="#" class="btn btn-social btn-facebook">
+                        <i class="fa fa-facebook">fb</i> </a>
+                    </div>
+
+                    <div class="social-btn-holder">
+                      <a href="#" class="btn btn-social btn-twitter">
+                        <i class="fa fa-twitter">tw</i> </a>
+                    </div>
+
+                    <div class="social-btn-holder">
+                      <a href="#" class="btn btn-social btn-linkedin">
+                        <i class="fa fa-youtube">ll</i> </a>
+                    </div>
+
+                    <div class="social-btn-holder">
+                      <a href="#" class="btn btn-social btn-google">
+                        <i class="fa fa-google">go</i></a>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="col-xs-12">
+                  <div class="tags">
+                    <span class="label label-info">Carry</span>
+                    <span class="label label-info">Solo Mid</span>
+                    <span class="label label-info">Scout</span>
+                    <span class="label label-info">Ukraine</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-7 profile-banner">
+          <p class="profile-info">Друзья, мы уехали на TI7! Пожелайте удачи :) Трансляция наших матчей на <a href="#">Твитче</a></p>
+          <p class="profile-sign">DreamTeam - Dream Big!!!</p>
+          <button class="btn btn-blue" type="button"></button>
+        </div>
+        <div class="col-md-12 navbar-main-wrapper">
+          <ul class="navbar-nav navbar-main-user navbar-center">
+            <li class="nav-item active">
+              <a class="nav-link" (click)="navigateToProfile()">
+                МОЙ ПРОФИЛЬ <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">МОИ ДРУЗЬЯ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#">МОЯ КОМАНДА</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#">МОИ ДОСТИЖЕНИЯ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#">СПОНСОРЫ</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!--component user-profile END-->
+
+    </div>
+    <div class="clearfix visible-xs-block"></div>
+
+
+    <div class="container bg-gray pt-2">
+
+      <div class="col-md-12">
+
+        <!--team-price-->
+        <div class="achievements-team-price">
+          <div class="row">
+            <div class="col-md-12">
+              <table class="team-price">
+              <thead>
+                <tr>
+                  <th>Название соревнования:</th>
+                  <th>Локация:</th>
+                  <th>Место:</th>
+                  <th>Награда:</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <h4>Dota 2 Champions League Season 8</h4>
+                    <p>03.08.2016 - 13.08.2016</p>
+                  </td>
+                  <td>
+                    <p>International</p>
+                    <p>Seattle</p>
+                  </td>
+                  <td class="trophy"><i class="fa fa-sm fa-trophy-gold"></i></td>
+                  <td>$ 1 000 000</td>
+                </tr>
+                <tr>
+                  <td>
+                    <h4>Dota 2 Champions League Season 5</h4>
+                    <p>03.08.2016 - 13.08.2016</p>
+                  </td>
+                  <td>
+                    <p>Major</p>
+                    <p>Seattle</p>
+                  </td>
+                  <td class="trophy"><i class="fa fa-sm fa-trophy-silver"></i></td>
+                  <td>$ 250 000</td>
+                </tr>
+                <tr>
+                  <td>
+                    <h4>Название соревнования:</h4>
+                    <p>03.08.2016 - 13.08.2016</p>
+                  </td>
+                  <td>
+                    <p>Championship</p>
+                    <p>Seattle</p>
+                  </td>
+                  <td class="trophy"><i class="fa fa-sm fa-trophy-bronze"></i></td>
+                  <td>$ 1 000</td>
+                </tr>
+                <tr>
+                  <td>
+                    <h4>Dota 2 Champions League Season 8</h4>
+                    <p>03.08.2016 - 13.08.2016</p>
+                  </td>
+                  <td>
+                    <p>Championship</p>
+                    <p>Seattle</p>
+                  </td>
+                  <td class="trophy"><span>4</span></td>
+                  <td>$ 1 000</td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+          </div>
+        </div>
+        <!--team-price END-->
+
+        <!--my-games-->
+        <div class="achievements-my-games">
+          <div class="row top-row">
+            <div class="col-md-4">
+              <div class="row mb-0 p-0">
+                <div class="col-md-7 pr-0">
+                  <p class="strong">Очки Достижений:</p>
+                  <p class="strong">4950</p>
+                </div>
+                <div class="col-md-5 pr-0">
+                  <p>Выполнено:</p>
+                  <p class="strong">465</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-5">
+              <ul class="nav nav-pills selector">
+                <li class="active"><a class="link">В процессе</a></li>
+                <li><a class="link">Завершенные</a></li>
+              </ul>
+            </div>
+            <div class="col-md-3">
+              <div class="dropdown dropdown-big dropdown-full-width mb-1">
+                <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Все Герои
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dLabel">
+                  <li>item1</li>
+                  <li>item2</li>
+                  <li>item3</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 pr-0">
+              <ul class="sidebar-list">
+                <li>General<span>16 / 23</span></li>
+                <li class="active">Hero Mastery <span>196 / 333</span></li>
+                <li>Hero Builds<span>18 / 120</span></li>
+                <li>Hero Feats<span>109 / 833</span></li>
+                <li>Item Builds<span>96 / 38</span></li>
+                <li>Lifetime<span>19 / 33</span></li>
+                <li>Lifetime<span>9</span></li>
+              </ul>
+            </div>
+            <div class="col-md-8 user-activity">
+              <!-- Use the tbody tag to group multiple tr tags
+http://www.growingwiththeweb.com/2012/06/use-tbody-tag-to-group-multiple-tr-tags.html
+-->
+              <table class="table table-game-achivments base">
+                <thead>
+                <tr>
+                  <th></th>
+                  <th>Задача:</th>
+                  <th>Дата последнего:</th>
+                  <th>% из всех игроков:</th>
+                  <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row" rowspan="3">
+                      <span class="table-toggle active"></span>
+                      <img alt="Scott Stevens" class="border-0 img-thumbnail p-0" src="http://api.randomuser.me/portraits/men/22.jpg">
+                    </th>
+                    <td class="pb-0"><b class="white">Win games as Trol Warlord</b></td>
+                    <td colspan="2"></td>
+                    <td rowspan="2" class="text-stage-big">+10</td>
+                  </tr>
+                  <tr>
+                    <td class="blue"> Troll Warlord</td>
+                    <td>19 / 20 95%</td>
+                    <td>2.42%</td>
+                  </tr>
+                  <tr>
+                    <td class="gray">10.09.2016</td>
+                    <td colspan="2"><div class="progress-bar"><div class="progress-current"></div></div></td>
+                    <td class="text-right">этап 3</td>
+                  </tr>
+                  <tr class='shown'>
+                    <td></td>
+                    <td colspan="4">
+                      <p class="white mb-0"><b>Завершите все этапы из списка:</b></p>
+                      <ul>
+                        <li><i class="fa fa-check-square-o" aria-hidden="true"></i>Within 2+ victories, play Night Stalker</li>
+                        <li><i class="fa fa-check-square-o" aria-hidden="true"></i>Within 2+ victories, play Night Stalker</li>
+                        <li><i class="fa fa-square-o" aria-hidden="true"></i>Within 2+ victories, play Night Stalker</li>
+                      </ul>
+                    </td>
+                  </tr>
+                </tbody>
+                <tbody>
+                  <tr>
+                    <th scope="row" rowspan="3">
+                      <span class="table-toggle"></span>
+                      <img alt="Scott Stevens" class="border-0 img-thumbnail p-0" src="http://api.randomuser.me/portraits/men/22.jpg">
+                    </th>
+                    <td class="pb-0"><b class="white">Win games as Trol Warlord</b></td>
+                    <td colspan="2"></td>
+                    <td rowspan="2" class="text-stage-big">+10</td>
+                  </tr>
+                  <tr>
+                    <td class="blue"> Troll Warlord</td>
+                    <td>19 / 20 95%</td>
+                    <td>2.42%</td>
+                  </tr>
+                  <tr>
+                    <td class="gray">10.09.2016</td>
+                    <td colspan="2"><div class="progress-bar"><div class="progress-current"></div></div></td>
+                    <td class="text-right">этап 3</td>
+                  </tr>
+                  <tr class="hide">
+                    <td></td>
+                    <td colspan="4">
+                      <p class="white mb-0"><b>Завершите все этапы из списка:</b></p>
+                      <ul>
+                        <li><i class="fa fa-check-square-o" aria-hidden="true"></i>Within 2+ victories, play Night Stalker</li>
+                        <li><i class="fa fa-check-square-o" aria-hidden="true"></i>Within 2+ victories, play Night Stalker</li>
+                        <li><i class="fa fa-square-o" aria-hidden="true"></i>Within 2+ victories, play Night Stalker</li>
+                      </ul>
+                    </td>
+                  </tr>
+                </tbody>
+                <tbody>
+                  <tr>
+                    <th scope="row" rowspan="3" >
+                      <span class="table-toggle"></span>
+                      <img alt="Scott Stevens" class="border-0 img-thumbnail p-0" src="http://api.randomuser.me/portraits/men/22.jpg">
+                    </th>
+                    <td class="pb-0"><b class="white">Win games as Trol Warlord</b></td>
+                    <td colspan="2"></td>
+                    <td rowspan="2" class="text-stage-big">+10</td>
+                  </tr>
+                  <tr>
+                    <td class="blue"> Troll Warlord</td>
+                    <td>19 / 20 95%</td>
+                    <td>2.42%</td>
+                  </tr>
+                  <tr>
+                    <td class="gray">10.09.2016</td>
+                    <td colspan="2"><div class="progress-bar"><div class="progress-current"></div></div></td>
+                    <td class="text-right">этап 3</td>
+                  </tr>
+                  <tr class="hide">
+                    <td></td>
+                    <td colspan="4">
+                      <p class="white mb-0"><b>Завершите все этапы из списка:</b></p>
+                      <ul>
+                        <li><i class="fa fa-check-square-o" aria-hidden="true"></i>Within 2+ victories, play Night Stalker</li>
+                        <li><i class="fa fa-check-square-o" aria-hidden="true"></i>Within 2+ victories, play Night Stalker</li>
+                        <li><i class="fa fa-square-o" aria-hidden="true"></i>Within 2+ victories, play Night Stalker</li>
+                      </ul>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!--my-games END-->
+
+        <!--achivments-site-->
+        <div class="achievements-site">
+          <!--<div class="row mb-0">
+            <div class="col-md-12">
+              <ul class="nav nav-pills selector">
+                <li class="active"><a class="link">Запланированные достижения</a></li>
+                <li><a class="link">Последние достижения</a></li>
+              </ul>
+            </div>
+          </div>-->
+          <div class="row">
+            <div class="col-md-8">
+              <ul class="nav nav-pills selector">
+                <li class="active"><a class="link">Запланированные достижения</a></li>
+                <li><a class="link">Последние достижения</a></li>
+              </ul>
+              <table class="table table-achivments base mt-2">
+                <thead>
+                  <tr>
+                    <th>Задача:</th>
+                    <th>Старт:</th>
+                    <th colspan="2">Дедлайн:</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Dota 2 GoodGame Cup 1x1 </th>
+                    <td>10.09.2016</td>
+                    <td>30.09.2016</td>
+                    <td>+10</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Dota 2 GoodGame Cup 1x1 </th>
+                    <td>10.09.2016</td>
+                    <td>30.09.2016</td>
+                    <td>+14</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Win games as Trol Warlord</th>
+                    <td>10.09.2016</td>
+                    <td>30.09.2016</td>
+                    <td>+14</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Прочитать статью о фарме</th>
+                    <td>10.09.2016</td>
+                    <td>30.09.2016</td>
+                    <td>+14</td>
+                  </tr>
+                </tbody>
+              </table>
+              <!--<nav aria-label="table navigation" class="table-pagination">
+                <ul class="pagination m-0">
+                  <li class="page-item">
+                    <div class="page-link" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                      <span class="sr-only">Previous</span>
+                    </div>
+                  </li>
+                  <li class="page-item"><a class="link page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="link page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="link page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <div class="page-link" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                      <span class="sr-only">Next</span>
+                    </div>
+                  </li>
+                </ul>
+              </nav>-->
+            </div>
+            <div class="col-md-4 border-left">
+              <div class="dropdown dropdown-big dropdown-full-width mb-1">
+                <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Carry
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dLabel">
+                  <li>item1</li>
+                  <li>item2</li>
+                  <li>item3</li>
+                </ul>
+              </div>
+              <div class="wrapper-chart">
+                <ul>
+                  <li>MMR</li>
+                  <li class="active">KDA</li>
+                  <li>LH</li>
+                  <li>DH</li>
+                  <li>W / R</li>
+                </ul>
+                <div class="chart-results">
+                  <div class="charts">
+                    <div class="chart" style="height: 45px"><span>45%</span></div>
+                    <div class="chart" style="height: 105px"><span>105%</span></div>
+                    <div class="chart" style="height: 75px"><span>75%</span></div>
+                  </div>
+                  <div class="charts-pagination">
+                    <ul>
+                      <li><button class="btn btn-sm btn-primary"><i class="icon icon-arrow-left-sm"></i></button></li>
+                      <li>SEP</li>
+                      <li>NOV</li>
+                      <li>DEC</li>
+                      <li><button class="btn btn-sm btn-primary"><i class="icon icon-arrow-right-sm"></i></button></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="row mt-1">
+            <div class="col-md-6 user-activity">
+              <h2>Мои Активности:</h2>
+              <ul>
+                <li>
+                  <div class="gray-box"></div>
+                  <div class="user-details">
+                    <p><b>Заполнение Профиля:</b></p>
+                    <div class="progress-box">
+                      <span>80 %</span>
+                      <div class="progress-bar">
+                        <div class="progress-current"></div>
+                      </div>
+                      <div class="level puny">
+                        <h2>2</h2>
+                        <p class="pt-0">уровень</p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="gray-box"></div>
+                  <div class="user-details">
+                    <p><b>Просмотр Уроков</b></p>
+                    <div class="progress-box">
+                      <span>80 %</span>
+                      <div class="progress-bar"><div class="progress-current"></div></div>
+                      <div class="level puny">
+                        <h2>2</h2>
+                        <p class="pt-0">уровень</p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="gray-box"></div>
+                  <div class="user-details">
+                    <p><b>Добавлено Уроков</b></p>
+                    <div class="progress-box">
+                      <span>2 / 10</span>
+                      <div class="progress-bar"><div class="progress-current"></div></div>
+                      <div class="level puny">
+                        <h2>2</h2>
+                        <p class="pt-0">уровень</p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="gray-box"></div>
+                  <div class="user-details">
+                    <p><b>Оставлено Коментариев на форуме</b></p>
+                    <div class="progress-box">
+                      <span>84</span>
+                      <div class="progress-bar"><div class="progress-current"></div></div>
+                      <div class="level puny">
+                        <h2>2</h2>
+                        <p class="pt-0">уровень</p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-6 user-common-achievement">
+              <h2>Мои Общие Достижения:</h2>
+              <table class="table table-achivments base mt-2">
+                <thead>
+                <tr>
+                  <th>Задача:</th>
+                  <th>Старт:</th>
+                  <th colspan="2">Дедлайн:</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <th scope="row">Dota 2 GoodGame Cup 1x1 </th>
+                  <td>10.09.2016</td>
+                  <td>30.09.2016</td>
+                  <td><i class="icon icon-medal icon-medal--gold"></i></td>
+                </tr>
+                <tr>
+                  <th scope="row">Dota 2 GoodGame Cup 1x1 </th>
+                  <td>10.09.2016</td>
+                  <td>30.09.2016</td>
+                  <td><i class="icon icon-medal icon-medal--silver"></i></td>
+                </tr>
+                <tr>
+                  <th scope="row">Win games as Trol Warlord</th>
+                  <td>10.09.2016</td>
+                  <td>30.09.2016</td>
+                  <td><i class="icon icon-medal icon-medal--bronze"></i></td>
+                </tr>
+                <tr>
+                  <th scope="row">Прочитать статью о фарме</th>
+                  <td>10.09.2016</td>
+                  <td>30.09.2016</td>
+                  <td>14</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!--achivments-site END-->
+
+
+      </div>
+
+        <pages></pages>
+
+
+  </div>
+</div>
+<!--/row-->
+
+</div>
+<!-- /container -->
+
+
+<footer class="footer">
+  <div class="container-fluid">
+    <span class="text-muted">Все права защищены</span>
+    <!--chat-box-->
+    <div class="chat-box chat-box-close">
+      <div class="chat-wrapper">
+        <div class="chat-header">
+          <span class="chat-title">Чат</span>
+          <div class="pull-right">
+            <button class="btn-transparent">
+              <i class="fa fa-window-minimize" aria-hidden="true"></i>
+            </button>
+            <button class="btn-transparent">
+              <i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="messages-box">
+          <div class="media mb-1">
+            <img class="user-logo d-flex mr-1" src="https://api.randomuser.me/portraits/women/2.jpg" alt="Generic placeholder image">
+            <div class="media-body text-xs-left">
+              <div class="user-reply">
+                <p class="user-reply-name">Name of user</p>
+                <p class="user-reply-time">11.02.2016</p>
+                <p name="user-reply-message">I have hinted that I would often jerk poor Queequeg from between the whale and the ship – where he would occasionally fall, from the incessant rolling and swaying of both.</p>
+              </div>
+            </div>
+          </div>
+          <div class="media mb-1">
+            <img class="user-logo img-circle d-flex mr-1" src="https://api.randomuser.me/portraits/women/2.jpg" alt="Generic placeholder image">
+            <div class="media-body text-xs-left">
+              <div class="user-reply">
+                <p class="user-reply-name">Name of user</p>
+                <p class="user-reply-time">11.02.2016</p>
+                <p name="user-reply-message">I have hinted that I would often jerk poor Queequeg from between the whale and the ship – where he would occasionally fall, from the incessant rolling and swaying of both.</p>
+              </div>
+            </div>
+          </div>
+          <div class="media mb-1">
+            <img class="user-logo img-circle d-flex mr-1" src="https://api.randomuser.me/portraits/women/2.jpg" alt="Generic placeholder image">
+            <div class="media-body text-xs-left">
+              <div class="user-reply">
+                <p class="user-reply-name">Name of user</p>
+                <p class="user-reply-time">11.02.2016</p>
+                <p name="user-reply-message">I have hinted that I would often jerk poor Queequeg from between the whale and the ship – where he would occasionally fall, from the incessant rolling and swaying of both.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="current-user-reply media mb-1">
+          <img class="user-logo d-flex mr-1" src="https://api.randomuser.me/portraits/women/32.jpg" alt="Generic placeholder image">
+          <div class="media-body text-xs-left">
+            <textarea name="reply-user" cols="30"></textarea>
+          </div>
+        </div>
+        <button class="btn btn-primary pull-right">Send</button>
+
+      </div>
+    </div>
+    <!--chat-box END-->
+  </div>
+</footer>
+<!--<background-panel></background-panel>-->
+
+<modal-adapter></modal-adapter>
+
+
+<!--template start END-->
+<script
+        src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+
+<!--<script type="text/javascript" src="./static/js/moment-with-locales.js"></script>
+<script type="text/javascript" src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+<script type="text/javascript" src="./static/js/polyfills.js"></script>
+<script type="text/javascript" src="./static/js/application.js"></script>-->
+</body>
+</html>

@@ -1,0 +1,76 @@
+.statistic {
+  .wrapper-block {
+    background-color: $shark;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  .wrapper-dropdown {
+    p {
+      line-height: 30px;
+      margin-right: 1rem;
+      margin-bottom: 0;
+      color: $iron;
+      font-size: $size-info;//12px
+    }
+  }
+  .wrapper-cards {
+    padding: 0 3rem 2rem;
+  }
+
+  .card {
+    background-color: $steel;
+    border-radius: 0;
+    margin-bottom: $base-margin;
+
+    &-header {
+      background-color: $steel;
+      color: $cornflower;
+      border: 0;
+      //text-transform: uppercase;
+      &:first-child {
+        border-radius: 0;
+      }
+    }
+    &-block {
+      padding: 0.625rem;
+      &:hover {
+        box-shadow: 0 0 5px 0 $cornflower;
+      }
+      .medal {
+        margin-right: 10px;
+        vertical-align: calc(100% - 30px);
+      }
+      .card-img-top {
+        width: 80px;
+        height: 80px;
+        margin-right: 40px;
+      }
+      &-footer {
+        font-size: $size-info;
+      }
+    }
+    &.card-sm {
+      .card-block {
+        .position {
+          display: inline-block;
+          line-height: 30px;
+          font-family: $font-bold;
+
+        }
+        img {
+          width: 30px;
+          height: 30px;
+          margin: 0 8px;
+        }
+        p {
+          margin-bottom: 0;
+          margin-top: 6px;
+        }
+      }
+    }
+    i.icon-medal:before {
+      transform: scale(1.2);
+    }
+  }
+
+}

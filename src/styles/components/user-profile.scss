@@ -1,0 +1,160 @@
+$height-profile: 240px;
+.user-profile {
+  .profile-box {
+    height: $height-profile;
+    h1 {
+      margin-top: 0.5rem;
+    }
+    figure {
+      margin: 0;
+      margin: 0 0 .5rem;
+
+      & > img {
+        max-width: 120px;
+      }
+    }
+    .social-btns {
+      display: inline-block;
+      .social-btn-holder {
+        float: left;
+        margin-right: 10px;
+      }
+      .btn {
+        padding: 0;
+      }
+      .fa {
+        background-image: url($assetPath + "img/icons/socilal-ic.png");
+        width: 20px;
+        height: 20px;
+        display: block;
+        background-size: cover;
+        font-size: 0;
+
+        &.fa-facebook{
+          background-position-x: 0px;
+        }
+        &.fa-twitter{
+          background-position-x: -20px;
+        }
+        &.fa-youtube{
+          background-position-x: -40px;
+        }
+        &.fa-google{
+          background-position-x: -58px;
+        }
+      }
+    }
+    .tags {
+      .label {
+        margin-right: 4px;
+      }
+    }
+    &:before {
+      -webkit-backdrop-filter: blur(5px);
+      backdrop-filter: blur(5px);
+      filter: blur(5px);
+
+      -webkit-filter: blur(5px); /* Safari */
+      -moz-filter: blur(5px);
+      -o-filter: blur(5px);
+      -ms-filter: blur(5px);
+
+      background-color: #667380;
+      max-height: 240px;
+      //background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/28727/pelican.jpg');
+
+      background-size: cover;
+      opacity: 0.4;
+      margin-left: -15px;
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+
+    }
+    .progress-box {
+      p {
+        font-size: $size-tag;
+        //margin-bottom: 2px;
+      }
+      .progress {
+        height: 13px;
+        background-color: $iron;
+        margin-bottom: 0.75rem;
+        span {
+          font-size: $size-tag;
+          line-height: $size-body;
+          text-align: center;
+          display: block;
+        }
+        p {
+          width: 60%;
+          background-color: $atlantis;
+          height: 13px;
+          display: block;
+          margin-top: -14px;
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .table {
+      border: none;
+      padding: 1em;
+
+    }
+  }
+}
+
+/*navbar-main-wrapper component*/
+.user-profile {
+  .navbar-main-wrapper {
+    background-color: rgba(61, 69, 77, 0.5);
+    .navbar-main-user {
+      &.navbar-center {
+        float: none;
+        margin: 0 auto;
+        display: table;
+        table-layout: fixed;
+      }
+
+      .nav-item {
+        line-height: 28px;
+        padding: 0 10px;
+        margin: 0;
+        &:hover {
+          background-image: linear-gradient(to bottom, rgba(201, 238, 248, 0), rgba(152, 216, 239, 0.5));
+        }
+        a {
+          color: $white-70;
+          font-size: $size-h3;
+          font-family: $font-menu;
+        }
+      }
+
+    }
+  }
+}
+
+/*profile-banner component*/
+.user-profile {
+  .profile-banner {
+    background: url($assetPath + "img/maxresdefault.jpg") center center no-repeat;
+    background-size: cover;
+    height: $height-profile;
+    padding-top: 180px;
+    padding-right: 70px;
+    .profile-sign {
+      color: $flushMahogany;
+    }
+    .btn-blue {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      padding: 0;
+      right: 30px;
+      bottom: 15px;
+      background: $cornflower url($assetPath + "img/icons/edit-btn.svg") no-repeat 4px 6px;
+    }
+  }
+}

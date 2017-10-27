@@ -1,0 +1,26 @@
+/*ubuntu*/
+@font-face {
+  font-family: "Ubuntu-Regular";
+  src: url($assetPath + "fonts/ubuntu/Ubuntu-R.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Ubuntu-Medium";
+  src: url($assetPath + "fonts/ubuntu/Ubuntu-M.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Ubuntu-Italic";
+  src: url($assetPath + "fonts/ubuntu/Ubuntu-MI.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Ubuntu-Bold";
+  src: url($assetPath + "fonts/ubuntu/Ubuntu-B.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+/*ubuntu END*/

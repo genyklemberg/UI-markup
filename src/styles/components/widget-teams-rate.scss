@@ -1,0 +1,41 @@
+.widget-teams-rate {
+  .img-thumbnail {
+    padding: 0;
+    border: 0;
+    width: 40px;
+    height: 30px;
+  }
+  .list-group-item {
+    display: table;
+    &.active {
+      background-color: $shuttleGray-dark;
+      .user-team-label-box {
+        padding: 3px 0;
+        display: table-caption;
+        background-color: $shuttleGray-dark;
+      }
+
+      span.user-team-label {
+        line-height: $size-info;
+        font-size: $size-info;
+        font-family: $font-info;
+        color: $iron;
+      }
+    }
+
+    [class*="col-"] {
+      float: none;
+      display: table-cell;
+      vertical-align: middle;
+    }
+    &[class*="col-"] {
+      float: none;
+      display: table-cell;
+      background-color: rebeccapurple;
+    }
+
+    .rate {
+      font-size: 1.125rem;
+    }
+  }
+}

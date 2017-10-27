@@ -1,0 +1,39 @@
+.selector {
+  background-color: $shuttleGray-dark;
+  display: inline-block;
+  @include border-radius(3px);
+  li {
+    &.active {
+      a.link {
+      background-color: $cornflower;
+      color: $mako;
+      @include border-radius(2px);
+        &:hover {
+          color: $mako;
+        }
+      }
+    }
+    a.link {
+      margin: 2px;
+      padding: 3px 10px;
+      color: $cornflower;
+      font-family: $font-info;
+      font-size: $size-info;
+      cursor: pointer;
+      &:hover {
+        color: $cornflower-70;
+      }
+    }
+  }
+  &-secondary {
+    background-color: transparent;
+    border: 1px solid $shuttleGray-dark;
+    span {
+      padding: 0 10px;
+      color: $iron;
+      font-size: $size-info;
+      line-height: 30px;
+    }
+  }
+}
+

@@ -1,0 +1,59 @@
+.cabinet-team-main {
+  padding: 1rem 1rem 3rem;
+  margin-bottom: 1rem;
+  background-color: $shark;
+  min-height: 410px;
+
+  .media {
+    border-bottom: 1px solid $shuttleGray-dark;
+    .table-user-information {
+      max-width: 52%;
+      tbody td {
+        padding: 0.5rem;
+        &:nth-child(2) {
+          font-family: $font-bold;
+        }
+      }
+    }
+  }
+  .wrapper-previous-matches {
+    .btn {
+      text-transform: none;
+      font-size: $size-info;
+      font-family: $font-bold;
+    }
+  }
+  .table-previous-matches {
+    thead td,
+    tbody td {
+      padding: 0.3rem 0.3rem 0.3rem 1rem;
+      border: none;
+      border-right: 1px solid $shuttleGray-dark;
+    }
+    tr:nth-child(2n){
+      font-family: $font-bold;
+    }
+    td {
+      &:last-child,
+      &[rowspan] {
+        border: none;
+      }
+      &[rowspan] {
+        padding-left: 0.3rem
+      }
+    }
+
+    img {
+      width: 50px;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+  }
+  .sponsors-box {
+    background-color: $shuttleGray-light;
+    display: block;
+    height: 22rem;
+    padding: 1rem;
+  }
+}

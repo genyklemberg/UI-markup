@@ -1,0 +1,60 @@
+
+$base-font-family: Helvetica, Arial, sans-serif;
+$base-font-size: 16px;
+
+$base-font-weight: 400;
+$bold-font-weight: 700;
+
+$base-margin: 0.625rem; //10px
+
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.5;
+
+/*Colors*/
+/* colorNames available here: http://chir.ag/projects/name-that-color/#D4D5D5 */
+
+$iron: #d4d5d5;
+$silver: #bdbdbd;
+$shuttleGray-dark: #525C66;
+$shuttleGray-light: #5B6875;
+$riverBed: #48515c;
+$steel:#7a8a99;
+$mako: #3d454d;
+$shark: #292E33;
+$woodsmoke: #14171a;
+$paleSky-50: rgba(102, 115, 128, 0.5);
+$paleSky-70: rgba(102, 115, 128, 0.7);
+$paleSky: rgba(102, 115, 128, 1);
+$brightGray-70: rgba(60, 69, 77, 0.7);
+
+
+$white: #ffffff;
+$white-70: rgba(255, 255, 255, 0.7);
+$white-90: rgba(255, 255, 255, 0.9);
+$cornflower: #98d9ef;
+$cornflower-dark: rgba(152, 217, 239 , 0.5);
+$cornflower-70: rgba(152, 217, 239 , 0.7);
+$atlantis: #72C42F;
+$butterCup: #f5a623;
+$flushMahogany: #c83838;
+
+/*Additional*/
+$gray-50: #eef2f5;
+$gray-70: #a9bdc9;
+$text-shadow: 0 0 5px $cornflower;
+
+// Animation
+$btn-transition-speed: 0.2s;
+$btn-transition-timing-function: ease-in-out;
+
+//Media queries params
+$max-1400: "(max-width: 1400px)";
+$max-1200: "(max-width: 1199px)";
+$max-768: "(max-width: 767px)";
+$min-1400: "(min-width: 1400px)";
+$min-1200: "(min-width: 1199px)";
+$min-768: "(min-width: 767px)";
+
+@import './variables-fonts';
+
+

@@ -1,0 +1,64 @@
+.achievements-team-price {
+  padding: 1rem 1rem 3rem;
+  margin-bottom: 1rem;
+  background-color: $shark;
+
+  table.team-price {
+    width: 100%;
+
+    thead {
+      border-bottom: 1px solid $shuttleGray-dark;
+      tr {
+        th {
+          padding: $base-margin;
+          font-family: $font-bold;
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          padding: 0.4375rem;
+          p {
+            margin: 0;
+          }
+          h4 {
+            color: $cornflower;
+            font-size: $size-h3;
+            font-family: $font-table;
+            ~p {
+              color: $iron;
+              font-size: $size-puny;
+            }
+          }
+
+          &.trophy {
+            span {
+              font-size: $size-base;
+              font-family: $font-bold;
+              margin-left: 10px;
+            }
+          }
+
+          &:nth-child(2){
+            p{
+              margin-bottom: .5rem;
+              &:last-child {
+                color: $iron;
+                font-size: $size-puny;
+                margin: 0;
+              }
+            }
+          }
+
+          &:last-child {
+            font-size: $size-base;
+            font-family: $font-bold;
+            color: $iron;
+          }
+        }
+      }
+    }
+  }
+}
+

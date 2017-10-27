@@ -1,0 +1,14 @@
+.pages-navigation {
+
+  .input-group.search-box {
+    .form-control {
+      height: 30px;
+    }
+    .input-group-btn button{
+      border-radius: .25rem;
+      background: $cornflower url($assetPath + "img/icons/search-dark.svg") 2px -2px;
+      height: 30px;
+      width: 30px;
+    }
+  }
+}

@@ -1,0 +1,137 @@
+.modal-adapter
+ {
+  .modal {
+    display: block !important;
+    overflow: auto;
+    .modal-header {
+      padding-bottom: 0;
+      border-bottom: 0;
+      .modal-title {
+        border-bottom: 1px solid $mako;
+        padding-bottom: 15px;
+      }
+      .close {
+        opacity: 1;
+        span {
+          font-size: 0;
+          position: absolute;
+          top: 1rem;
+          right: 1rem;
+          width: 15px;
+          height: 15px;
+          background: url($assetPath + "img/icons/x-big.svg") no-repeat 0 0;
+          &:hover {
+            background-position-x: -15px;
+          }
+        }
+      }
+    }
+    .modal-content {
+      background-color: $shark;
+      box-shadow: 0 0 5px 0 $cornflower;
+
+      img {
+        padding: 0;
+      }
+      ul li.list-group-item {
+        background-color: $mako;
+        border: 0;
+
+        img {
+          width: 40px;
+          height: auto;
+        }
+      }
+      textarea {
+        border: solid 1px $riverBed;
+      }
+      .modal-body {
+        padding-bottom: 0;
+
+      }
+    }
+
+    .modal-footer {
+      padding-top: 0;
+      border-top: 0;
+      .button-box {
+        .btn {
+          width: 24%;
+        }
+      }
+      .col {
+        padding: 0 4px;
+        .btn {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+
+  .login-modal {}
+
+  .news-create {
+    &.news-create-guide {
+    }
+  }
+
+  .messages-chat {
+    ul {
+      max-height: 450px;
+      overflow: auto;
+      li {
+        p {
+          &:hover {
+            cursor: pointer;
+            background-color: $shuttleGray-light;
+          }
+        }
+      }
+    }
+    p {
+      margin-bottom: 0;
+    }
+    textarea {
+      display: inline-block;
+      background-color: $shuttleGray-light;
+      border-radius: 4px;
+      padding: 10px;
+      width: 100%;
+      margin-bottom: $base-margin;
+    }
+    .user-info {
+      img {
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        margin-right: 0.5rem;
+        width: 1rem;
+      }
+    }
+    .room-time {
+      border-bottom: 1px solid $shuttleGray-light;
+      padding-bottom: 0.25rem;
+      margin-bottom: 0.5rem;
+    }
+    .btn-transparent {
+      span {
+        margin-left: 0.1875rem; //3px;
+      }
+      &.btn-sm {
+        border: 0;
+      }
+    }
+  }
+
+  .dropdown-menu-dots {
+    content: '';
+    width: 10px;
+    height: 22px;
+    display: block;
+    float: right;
+    background: url($assetPath + '/img/icons/side-menu.png') no-repeat;
+    cursor: pointer;
+  }
+
+}

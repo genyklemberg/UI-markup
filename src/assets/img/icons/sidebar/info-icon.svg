@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <title>FF5DCD0B-F9D9-4880-BD93-B838EAB63832</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="2.-Profile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Profile" transform="translate(-830.000000, -1095.000000)">
+            <g id="Background" fill="#141719">
+                <rect id="Rectangle-2-Copy" x="0" y="0" width="1280" height="1956"></rect>
+            </g>
+            <g id="Content-Background" transform="translate(128.000000, 359.000000)" fill="#3D454D">
+                <rect id="Rectangle-7" x="0" y="54" width="1024" height="1647"></rect>
+            </g>
+            <g id="Players-Rating" transform="translate(810.000000, 719.000000)" fill="#292E33">
+                <rect id="Rectangle-3-Copy-8" x="0" y="67" width="300" height="329"></rect>
+            </g>
+            <path d="M837,1109 C840.865993,1109 844,1105.86599 844,1102 C844,1098.13401 840.865993,1095 837,1095 C833.134007,1095 830,1098.13401 830,1102 C830,1105.86599 833.134007,1109 837,1109 Z M838,1101.5 L838,1101 L835,1101 L835,1102 L836,1102 L836,1105 L835,1105 L835,1106 L839,1106 L839,1105 L838,1105 L838,1101.5 Z M837,1100 C837.552285,1100 838,1099.55228 838,1099 C838,1098.44772 837.552285,1098 837,1098 C836.447715,1098 836,1098.44772 836,1099 C836,1099.55228 836.447715,1100 837,1100 Z" id="Combined-Shape" fill="#98D9EF" opacity="0.699999988"></path>
+        </g>
+    </g>
+</svg>

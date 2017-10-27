@@ -1,0 +1,65 @@
+.about-player {
+  h2 {
+    margin-bottom: 1.5rem;
+  }
+  .wrapper-split-double {
+    width: 100%;
+    div {
+      width: 50%;
+      float: left;
+      &:first-child {
+        width: 45%;
+        margin-right: 5%;
+      }
+    }
+  }
+  .social-btn-holder {
+    max-height: $size-body;
+  }
+  .additional-info {
+    margin: 1rem 1rem 0 1rem;
+    padding: 1rem;
+    background-color: $shark;
+    .start-box {
+      font-size: 1rem;
+      i.fa {
+        color: $cornflower;
+        cursor: pointer;
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+  }
+  .subscribers {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: $shark;
+    ul {
+      list-style-type: none;
+      //max-width: 940px;
+      margin: 0 auto;
+      padding: 0;
+      li {
+        margin-right: 0.5%;
+        width: 100/8 - 0.5%;
+        max-width: 140px;
+        min-height: 110px;
+        float: left;
+        text-align: center;
+        img {
+          border: 0;
+          max-width: 60px;
+          padding: 0;
+          margin-bottom: 0.5rem;
+        }
+        p { margin-bottom: 0; }
+      }
+    }
+    &:after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+  }
+}

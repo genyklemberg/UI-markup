@@ -1,0 +1,144 @@
+h1 {
+  color: $white;
+  font-family: $font-h1;
+  font-size: $size-h1;
+  line-height: $line-height-h1;
+  @media #{$max-1200} {
+    font-family: $font-h2;
+  }
+  @media (max-width: 767px){
+    font-size: $size-h3;
+    line-height: $line-height-h3;
+    padding: 0;
+  }
+}
+h2 {
+  font-family: $font-h2 ;
+  font-size: $size-h2;
+  color: $white;
+  line-height: $line-height-h2;
+  @media (max-width: 767px){
+    font-size:$size-h3;
+    line-height: $line-height-h3;
+  }
+}
+
+h3 {
+  font-family: $font-h3;
+  font-size: $size-h3;
+  color: $white;
+  line-height: $line-height-h3;
+  @media (max-width: 767px){
+    font-size:$size-h4;
+    line-height: $line-height-h4;
+  }
+}
+
+h4 {
+  color: $white;
+  font-family: $font-h4;
+  font-size: $size-h4;
+  line-height: $line-height-h4;
+}
+h5 {
+  color: $white;
+  font-family: $font-h5;
+  font-size: $size-h5;
+  line-height: $line-height-h5;
+}
+h6 {
+  color: $white;
+  font-family: $font-h6;
+  font-size: $size-h6;
+  line-height: $line-height-h6;
+  @media (max-width: 767px){
+    font-family: $font-h5;
+    font-size:$size-h5;
+    line-height: $line-height-h5;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $base-font-weight;
+}
+
+.text-primary,
+.base,
+.body {
+  font-family: $font-body;
+  font-size: $size-body;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: $line-height-body;
+  letter-spacing: normal;
+  color: $white;
+}
+
+.puny {
+  font-family: $font-body;
+  font-size: $size-puny;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: $line-height-body*0.6;
+  letter-spacing: normal;
+  color: $white;
+}
+
+.caption {
+  font-family: $font-info;
+  font-size: $size-info;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: $line-height-body*0.7;
+  color: $cornflower;
+  &-gray {
+    color: $iron;
+  }
+  &-white {
+    color: $white;
+  }
+}
+
+.strong,
+b,strong {
+  font-family: $font-bold;
+  font-weight: normal;
+}
+
+.black {
+  color: $shark;
+}
+.gray {
+  color: $mako;
+}
+.gray-light {
+  color: $iron;
+}
+.white {
+  color: $white;
+}
+.blue {
+  color: $cornflower;
+}
+.red {
+  color: $flushMahogany;
+}
+.green {
+  color: $atlantis;
+}
+.orange {
+  color: $butterCup;
+}
+
+.bg-gray {
+  background-color: $mako;
+}
+.bg-shuttlegray-dark {
+  background-color: $shuttleGray-dark;
+}
+.bg-black {
+  background-color: $shark;
+}
